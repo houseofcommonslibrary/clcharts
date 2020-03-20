@@ -160,7 +160,7 @@ The names of the colors that are available with `commonslib_color` are:
 - burnt_orange
 - cherry
 
-A separate function called `commonslib_party_color` is avaialable for the colors of political parties. The names of the colors that are available with `commonslib_party_color` are:
+A separate function called `commonslib_party_color` is available for the colors of political parties. The names of the colors that are available with `commonslib_party_color` are:
 
 - conservative
 - labour

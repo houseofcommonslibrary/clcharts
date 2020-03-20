@@ -1132,4 +1132,8 @@ The principal functions that you will use in the `clcharts` package are:
 - save_svg
 - save_png
 
-Type a question mark followed by a function name into the R console to see the full documentation and parameter list for each function. For example, to see all of the parameters you can set in `theme_commonslib` type `?theme_commonslib`,
+Type a question mark followed by a function name into the R console to see the full documentation and parameter list for each function. For example, to see all of the parameters you can set in `theme_commonslib` type: 
+
+```r
+?theme_commonslib
+```

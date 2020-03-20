@@ -189,9 +189,9 @@ The following recipes provide examples of how to create different common chart t
 
 ### Horizontal Bar Chart
 
-A simple horizontal bar chart:
-
 <img src="examples/recipes/bar-chart-annotations/bar-chart-annotations.png" width="600" />
+
+A simple horizontal bar chart:
 
 - Use `geom_col` to represent values with bars
 - Set `expand` to `c(0, 0)` in `scale_y_continuous` to turn off padding on the y axis
@@ -282,9 +282,9 @@ save_svg(
 
 ### Vertical Column Chart
 
-A vertical column chart with labels:
-
 <img src="examples/recipes/column-chart-labels/column-chart-labels.png" width="800" />
+
+A vertical column chart with labels:
 
 - Use `geom_bar` to represent the number of items in each group with bars
 - Use `geom_text_commonslib` to add the text labels in the correct font
@@ -364,9 +364,9 @@ save_svg(
 
 ### Stacked Column Chart
 
-A stacked column chart with a legend:
-
 <img src="examples/recipes/stacked-column-chart/stacked-column-chart.png" width="800" />
+
+A stacked column chart with a legend:
 
 - Use `geom_col` to represent values with bars
 - Map `nationality` to `fill` in `aes` to color each nationality group differently
@@ -453,9 +453,9 @@ save_svg(
 
 ### Line Chart
 
-A line chart with two groups and a legend:
-
 <img src="examples/recipes/line-chart/line-chart.png" width="800" />
+
+A line chart with two groups and a legend:
 
 - Map `flow` to `color` in `aes` to color each flow group differently
 - Set `color` to `NULL` in `labs` to turn off the legend title
@@ -536,9 +536,9 @@ save_svg(
 
 ### Area Chart
 
-An area chart with annotations:
-
 <img src="examples/recipes/area-chart-annotations/area-chart-annotations.png" width="800" />
+
+An area chart with annotations:
 
 - Import the `scales` package for formatting axis labels
 - Use `geom_area` to represent values with shaded areas
@@ -636,9 +636,9 @@ save_svg(
 
 ### Scatter Chart
 
-A scatter chart with points shaded by a categorical variable:
-
 <img src="examples/recipes/scatter-chart/scatter-chart.png" width="800" />
+
+A scatter chart with points shaded by a categorical variable:
 
 - Import the `scales` package for formatting axis labels
 - Use `geom_point` to represent values with shaded areas
@@ -734,9 +734,9 @@ save_svg(
 
 ### Faceted Scatter Chart
 
-A scatter chart faceted by a categorical variable:
-
 <img src="examples/recipes/scatter-chart-facets/scatter-chart-facets.png" width="800" />
+
+A scatter chart faceted by a categorical variable:
 
 - Use `geom_point` to represent values with shaded areas
 - Set `shape` to `16` in `geom_point` to get a points without borders
@@ -836,9 +836,9 @@ save_svg(
 
 ### Smoothed Ridge Chart
 
-A smoothed ridge chart - you will need to install the `ggridges` package with `install.packages("ggridges")` to make this chart:
-
 <img src="examples/recipes/ridge-chart-smooth/ridge-chart-smooth.png" width="800" />
+
+A smoothed ridge chart - you will need to install the `ggridges` package with `install.packages("ggridges")` to make this chart:
 
 - Import the `ggridges` package for making ridge charts
 - Use `geom_density_ridges` to represent data as a histogram
@@ -926,9 +926,9 @@ save_svg(
 
 ### Binned Ridge Chart
 
-A binned ridge chart - you will need to install the `ggridges` package with `install.packages("ggridges")` to make this chart:
-
 <img src="examples/recipes/ridge-chart-bins/ridge-chart-bins.png" width="800" />
+
+A binned ridge chart - you will need to install the `ggridges` package with `install.packages("ggridges")` to make this chart:
 
 - Import the `ggridges` package for making ridge charts
 - Use `geom_density_ridges` to represent data as a histogram
@@ -1020,9 +1020,9 @@ save_svg(
 
 ### Dumbbell Chart
 
-A dumbell chart - you will need to install the `ggalt` package with `install.packages("ggalt")` to make this chart:
-
 <img src="examples/recipes/dumbbell-chart/dumbbell-chart.png" width="700" />
+
+A dumbell chart - you will need to install the `ggalt` package with `install.packages("ggalt")` to make this chart:
 
 - Import the `ggalt` package for making ridge charts
 - Use `geom_dumbell` to represent pairs of variables as a dumbbell

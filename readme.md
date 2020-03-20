@@ -641,7 +641,7 @@ A scatter chart with points shaded by a categorical variable:
 - Set `shape` to `16` in `geom_point` to get a points without borders
 - Set `label` to `percent_format(accuracy = 1)` in `scale_y_continuous` to format percentages
 
-Note that in practivce you probably wouldn't want to use all of these colours at the same time in a single scatter chart. Faceting the groups may be more appropriate (see the next recipe for an example).
+Note that in practice you probably wouldn't want to use all of these colours at the same time in a single scatter chart. Faceting the groups may be more appropriate (see the next recipe for an example).
 
 ```r
 # Imports ---------------------------------------------------------------------

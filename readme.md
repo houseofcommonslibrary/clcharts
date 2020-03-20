@@ -456,8 +456,8 @@ A line chart with two groups and a legend:
 - Map `flow` to `color` in `aes` to color each flow group differently
 - Set `color` to `NULL` in `labs` to turn off the legend title
 - Set `expand` to `c(0, 0)` in both axis scales to turn off axis padding
-- Set `legend_position` to `top-right` in `theme_commonslib`
 - Use `scale_color_manual` and `commonslib_color` to map a theme color to each group
+- Use an additional `theme` customisation to overlay the legend on the plot
 
 ```r
 # Imports ---------------------------------------------------------------------

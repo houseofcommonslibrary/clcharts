@@ -111,7 +111,9 @@ This code will create the following plot in the Commons Library style. This plot
 
 `clcharts` adds one more step to the basic plotting workflow: using the `add_commonslib_titles` function to add titles to a plot.
 
-In the above example we added a title by using the `labs` function. This is the standard method for setting titles and subtitles in `ggplot2` and it gives you the title alignment you see in the example, with the titles aligned to the left-hand edge of the plotting area. In the House of Commons Library style the titles should be aligned to the left-hand edge of the y axis. To make this easy, `clcharts` provides a function that will give you fully left-aligned titles and subtitles consistent with the package theme.
+In the above example we added a title by using the `labs` function. This is the standard method for setting titles and subtitles in `ggplot2` and it gives you the title alignment you see in the example, with the titles aligned to the left-hand edge of the plotting area. 
+
+In the House of Commons Library style the titles should be aligned to the left-hand edge of the y axis. To make this easy, `clcharts` provides a function called `add_commonslib_titles`, which will give you fully left-aligned titles and subtitles consistent with the package theme.
 
 Create the plot *without* setting the title and subtitle in `labs`.
 

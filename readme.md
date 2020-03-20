@@ -9,7 +9,7 @@ The documentation that follows is divided into four broad sections:
 3. [Recipes](#recipes)
 4. [Reference](#reference)
 
-Some of the material shown in Sections 2 and 3 will be familiar to experienced R users. It is included to help newer R users who are still learning how to work with ggplot. These sections do not provide a complete introduction to working with ggplot, but they will help you understand how to use the `clcharts` package in practice, and show you how to make some of the most frequently used charts in the House of Commons Library style. Even experienced users should take note of the conventions used to adhere to the style guidance when using R. `clcharts` is designed to make this easier, and provides some helper functions that will save you time.
+Some of the material shown in Sections 2 and 3 will be familiar to experienced R users. It is included to help newer R users who are still learning how to work with ggplot. These sections do not provide a complete introduction to working with ggplot, but they will help you understand how to use the `clcharts` package in practice, and show you how to make some of the most frequently used charts in the House of Commons Library style. Even experienced users should take note of the conventions used to adhere to the style guidance when using R. `clcharts` is designed to make this easier and provides some helper functions that will save you time.
 
 For a detailed introduction to using `ggplot2` see Chapter 3 of *R for Data Science* on [Data visualisation](https://r4ds.had.co.nz/data-visualisation.html).
 

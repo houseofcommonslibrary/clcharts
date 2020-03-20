@@ -124,7 +124,7 @@ labs(
     y = "Value") +
 ```
 
-Add the title and subtitle afterwards using `add_commonslib_titles`
+Add the title and subtitle afterwards using `add_commonslib_titles`.
 
 ```r
 # Add a title and subtitle with add_commonslib_titles

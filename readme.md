@@ -276,7 +276,7 @@ save_svg(
     height = 5)
 ```
 
-<img src="examples/recipes/bar-chart-annotations/bar-chart-annotations.png" width="800" />
+<img src="examples/recipes/bar-chart-annotations/bar-chart-annotations.png" width="600" />
 
 ### Vertical Column Chart
 

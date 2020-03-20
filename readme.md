@@ -1121,7 +1121,7 @@ save_svg(
 
 ## Reference
 
-The prinipal functions that you will use in the `clcharts` package are:
+The principal functions that you will use in the `clcharts` package are:
 
 - theme_commonslib
 - add_commonslib_titles

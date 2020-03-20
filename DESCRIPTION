@@ -1,0 +1,22 @@
+Package: clcharts
+Type: Package
+Title: Themes, Colors and Tools for Making Charts in the House of Commons 
+    Library style
+Version: 0.1.0
+Author: Oliver Hawkins
+Maintainer: Oliver Hawkins <oli@olihawkins.com>
+Description: The clcharts package provides themes, colors, and tools for making 
+    charts in the House of Commons Library style.
+License: BSD_3_clause + file LICENSE
+Encoding: UTF-8
+Imports:
+    ggplot2,
+    magrittr,
+    patchwork,
+    purrr,
+    rlang,
+    rsvg,
+    showtext,
+    stringr,
+    sysfonts
+RoxygenNote: 7.0.2

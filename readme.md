@@ -100,7 +100,7 @@ plot <- ggplot(
     theme_commonslib()
 
 # Save the plot
-save_png(plot, "ggplot-basics-1.png", height = 4.4, width = 6.6)
+save_png(plot, "ggplot-basics-1.png", width = 8, height = 5)
 ```
 
 This code will create the following plot in the Commons Library style. This plot is not finished. There are some further modifications we would need to make before it fully adheres to the style guide. But this shows the basic workflow of making a plot with `ggplot2`.

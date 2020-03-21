@@ -56,7 +56,7 @@ library(clcharts)
 
 - Use the `ggplot` function to specify your data and how it relates to the plot
 - Use a `geom` function to say how your data will be represented (lines, bars, points etc.)
-- Use the `labs` function to set labels for the plot elements (title, subtitle, axis titles, captions etc.)
+- Use the `labs` function to set labels for the plot elements (title, subtitle, axis titles, caption etc.)
 - Use `scale_x` and `scale_y` functions to configure the axis settings (limits, labels, breaks etc.)
 - Use a `theme` function to set the overall style of the plot
 

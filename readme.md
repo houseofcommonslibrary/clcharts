@@ -179,7 +179,7 @@ A separate function called `commonslib_party_color` is available for the colors 
 - alliance
 - other
 
-You can use `commonslib_color` and `commonslib_party_color` to map the colors to different groups in your data using `scale_color_manual` and `scale_fill_manual`. We didn't shade the data by group in the basic examples shown above as there weren't any groups, but you can see some examples of this in the recipes below. Have a look at the [Stacked Column Chart](#stacked-column-chart) and the [Line Chart](#line-chart) to see how to use these functions to map colors to groups in your data.
+You can use `commonslib_color` and `commonslib_party_color` to map the colors to different groups in your data using `scale_color_manual` and `scale_fill_manual`. We didn't shade the data by group in the basic example shown above as there weren't any groups, but you can see some examples of this in the recipes below. Have a look at the [Stacked Column Chart](#stacked-column-chart) and the [Line Chart](#line-chart) to see how to use these functions to map colors to groups in your data.
 
 ---
 

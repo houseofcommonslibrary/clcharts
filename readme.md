@@ -103,7 +103,7 @@ plot <- ggplot(
 save_png(plot, "ggplot-basics-1.png", width = 8, height = 5)
 ```
 
-This code will create the following plot in the Commons Library style. This plot is not finished. There are some further modifications we would need to make before it fully adheres to the style guide. But this shows the basic workflow of making a plot with `ggplot2`.
+This code will create the following plot in the Commons Library style. This plot is not finished. There are further modifications we need to make before it fully adheres to the style guide. But this shows the basic workflow of making a plot with `ggplot2`.
 
 <img src="examples/basics/ggplot-basics-1.png" width="800" />
 
@@ -140,7 +140,7 @@ Making these changes will give you a plot with the correct title formatting, lik
 
 ### Colors
 
-In the example line chart above we set the color for the line by specifying the RGB code of the main Commons Library green. Rather than looking up color codes every time you need to make a plot, `clcharts` provides a function called `commonslib_color` that will let you look up colors by name. In the previous example you would use it like this when setting the color in `geom_line`.
+In the example line chart above we set the color for the line by specifying the RGB code of the main Commons Library green. Rather than looking up color codes every time you need to make a plot, `clcharts` provides a function called `commonslib_color` that lets you look up colors by name. In the previous example you would use it like this when setting the color in `geom_line`.
 
 ```r
 # Set the color in geom_line using commonslib_color

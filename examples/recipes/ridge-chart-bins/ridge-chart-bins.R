@@ -64,8 +64,8 @@ plot <- ggplot(
     scale_x_continuous(expand = c(0, 0)) +
     # Use this to stop ggplot clipping the top of the highest ridge
     coord_cartesian(clip = "off") +
-    # Add the Commons Library theme: turn off the axes, set the caption
-    # position, and use verical gridlines
+    # Add the Commons Library theme: turn off the axes, use verical gridlines,
+    # and set the caption position
     theme_commonslib(
         axes = "",
         grid = "v",

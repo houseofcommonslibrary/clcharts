@@ -25,7 +25,7 @@ library(clcharts)
 df <- read_csv("bar-chart-annotations.csv")
 
 # Turn the region column into a factor and order it by the number of premises
-#in each region: this sorts the bars in the chart from largest to smallest
+# in each region: this sorts the bars in the chart from largest to smallest
 df$region <- factor(df$region)
 df$region <- reorder(df$region, df$premises)
 

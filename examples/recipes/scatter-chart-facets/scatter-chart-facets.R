@@ -57,7 +57,7 @@ plot <- ggplot(
         y = "Turnout",
         color = "Settlement class",
         caption = "Source: House of Commons Library") +
-    # Configure the the x and y axes: set the x axis limits,; set the y axis
+    # Configure the the x and y axes: set the x axis limits; set the y axis
     # limits and the y axis labels to show percentages to the nearest percent,
     # turn off the expansion on both axes
     scale_x_continuous(

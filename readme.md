@@ -641,7 +641,7 @@ save_svg(
 A scatter chart with points shaded by a categorical variable:
 
 - Import the `scales` package for formatting axis labels
-- Use `geom_point` to represent values with shaded areas
+- Use `geom_point` to represent values with points
 - Set `shape` to `16` in `geom_point` to get a points without borders
 - Set `label` to `percent_format(accuracy = 1)` in `scale_y_continuous` to format percentages
 
@@ -738,7 +738,7 @@ save_svg(
 
 A scatter chart faceted by a categorical variable:
 
-- Use `geom_point` to represent values with shaded areas
+- Use `geom_point` to represent values with points
 - Set `shape` to `16` in `geom_point` to get a points without borders
 - Set `alpha` to `0.6` in `geom_point` to increase transparency of the points
 - Use `facet_wrap` to plot a different chart for each category in a variable

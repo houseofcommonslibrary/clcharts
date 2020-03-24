@@ -739,8 +739,8 @@ save_svg(
 A scatter chart faceted by a categorical variable:
 
 - Use `geom_point` to represent values with points
-- Set `shape` to `16` in `geom_point` to get a points without borders
-- Set `alpha` to `0.6` in `geom_point` to increase transparency of the points
+- Set `shape` to `16` in `geom_point` to get points without borders
+- Set `alpha` to `0.6` in `geom_point` to reduce the opacity of the points
 - Use `facet_wrap` to plot a different chart for each category in a variable
 
 ```r

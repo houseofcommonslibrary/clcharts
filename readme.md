@@ -130,8 +130,8 @@ Add the title and subtitle afterwards using `add_commonslib_titles`.
 # Add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
     plot,
-    title = "The price has increased over time",
-    subtitle = "Value of Some Stock since launch")
+    title = "Something has increased",
+    subtitle = "The value of something over time")
 ```
 
 Making these changes will give you a plot with the correct title formatting, like this.

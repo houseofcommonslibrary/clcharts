@@ -1020,8 +1020,8 @@ save_svg(
 
 A dumbell chart - you will need to install the `ggalt` package with `install.packages("ggalt")` to make this chart:
 
-- Import the `ggalt` package for making ridge charts
-- Use `geom_dumbell` to represent pairs of variables as a dumbbell
+- Import the `ggalt` package to make dumbbell charts
+- Use `geom_dumbbell` to represent pairs of variables as a dumbbell
 - Map variables to `x` and `xend` in `aes` to indicate the paired variables
 - Use `annotate_commonslib` to label each variable in the pair with the right font
 

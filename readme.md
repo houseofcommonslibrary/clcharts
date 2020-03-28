@@ -19,7 +19,7 @@ For a detailed introduction to using `ggplot2` see Chapter 3 of *R for Data Scie
 
 ### Installation
 
-Install from GitHub using remotes. The package wil install any missing dependencies. One of these is sysfonts, which on MacOS requires [XQuartz](https://www.xquartz.org) to work correctly.
+Install from GitHub using remotes. The package will install necessary dependencies. One of these is sysfonts, which on MacOS requires [XQuartz](https://www.xquartz.org) to work correctly.
 
 ``` r
 install.packages("remotes")

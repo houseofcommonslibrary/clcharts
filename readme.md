@@ -17,6 +17,20 @@ For a detailed introduction to using `ggplot2` see Chapter 3 of *R for Data Scie
 
 ## Setup
 
+### Fonts
+
+__You must install the font pack before you install the package.__ 
+
+The House of Commons Library chart style uses licensed fonts that are not distributed with the `clcharts` package. Instead, a font pack is separately available for Library users. This is a small folder of the required font files, which should be copied into your home directory with the folder name `.clcharts`.
+
+Library users can find the font pack on the shared drive under `Teams/Statistics/Subjects/Code/R`. The location of your home directory will depend on your operating system. To find out the location of the directory where `clcharts` will expect to find the font pack folder, type the following into your R console:
+
+```r
+Sys.getenv("HOME")
+```
+
+Copy the `.clcharts` folder into your home directory and `clcharts` will automatically import the font files whenever the package loads.
+
 ### Installation
 
 Install from GitHub using remotes. The package will install necessary dependencies. One of these is `sysfonts`, which on MacOS requires [XQuartz](https://www.xquartz.org) to work correctly.
@@ -26,21 +40,9 @@ install.packages("remotes")
 remotes::install_github("olihawkins/clcharts")
 ```
 
-### Fonts
-
-The House of Commons Library chart style uses licensed fonts that are not distributed with the `clcharts` package. Instead, a font pack is separately available for Library users. This is a small folder of the required font files, which should be copied into your home directory with the folder name `.clcharts`.
-
-The location of your home directory will depend on your operating system. To find out the location of the directory where `clcharts` will expect to find the font pack folder, type the following into your R console:
-
-```r
-Sys.getenv("HOME")
-```
-
-Copy the `.clcharts` folder into your home directory and `clcharts` will automatically import the font files whenever the package loads.
-
 ### Importing
 
-Once the package and the font pack have both been installed, you can import the package into your R session or script with:
+Once the font pack and the package have both been installed, you can import the package into your R session or script with:
 
 ```
 library(clcharts)

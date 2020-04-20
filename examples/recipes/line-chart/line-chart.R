@@ -57,9 +57,10 @@ plot <- ggplot(
     # We could have used legend_position = "top-right" in theme_commonslib
     # to put the legend at the top-right above the plot area
     theme(
-        legend.position = c(1, 0.99),
+        legend.position = c(1.03, 0.99),
         legend.justification = c(1, 1),
-        legend.direction = "horizontal")
+        legend.direction = "horizontal",
+        legend.text = element_text(margin = margin(r = 10)))
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(

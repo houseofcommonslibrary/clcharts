@@ -1,0 +1,149 @@
+﻿country,country_code,region,value
+Timor-Leste,TLS,East Asia & Pacific,20610000
+Fiji,FJI,East Asia & Pacific,48412174.69
+Papua New Guinea,PNG,East Asia & Pacific,60592819.14
+Mongolia,MNG,East Asia & Pacific,96067489.86
+Brunei Darussalam,BRN,East Asia & Pacific,346588691
+Cambodia,KHM,East Asia & Pacific,543205183.3
+Myanmar,MMR,East Asia & Pacific,2030465547
+New Zealand,NZL,East Asia & Pacific,2262928312
+Malaysia,MYS,East Asia & Pacific,3469828207
+Philippines,PHL,East Asia & Pacific,3769741011
+Vietnam,VNM,East Asia & Pacific,5500000000
+Thailand,THA,East Asia & Pacific,6829203403
+Indonesia,IDN,East Asia & Pacific,7437197348
+Singapore,SGP,East Asia & Pacific,10841000269
+Australia,AUS,East Asia & Pacific,26711834225
+"Korea, Rep.",KOR,East Asia & Pacific,43069973343
+Japan,JPN,East Asia & Pacific,46617954864
+China,CHN,East Asia & Pacific,2.49997E+11
+Moldova,MDA,Europe & Central Asia,33957719.1
+Kosovo,XKX,Europe & Central Asia,63344074.22
+Montenegro,MNE,Europe & Central Asia,83806050.31
+North Macedonia,MKD,Europe & Central Asia,117383985.5
+Kyrgyz Republic,KGZ,Europe & Central Asia,121163619.9
+Albania,ALB,Europe & Central Asia,180488725.1
+Bosnia and Herzegovina,BIH,Europe & Central Asia,221131597.1
+Georgia,GEO,Europe & Central Asia,316508368.1
+Cyprus,CYP,Europe & Central Asia,381879772.9
+Luxembourg,LUX,Europe & Central Asia,419372654.8
+Slovenia,SVN,Europe & Central Asia,529496122.7
+Armenia,ARM,Europe & Central Asia,608854649.9
+Estonia,EST,Europe & Central Asia,618486125.4
+Latvia,LVA,Europe & Central Asia,679862611.1
+Belarus,BLR,Europe & Central Asia,715166688.7
+Croatia,HRV,Europe & Central Asia,889523365.3
+Serbia,SRB,Europe & Central Asia,904323391.5
+Lithuania,LTU,Europe & Central Asia,1030416770
+Bulgaria,BGR,Europe & Central Asia,1095591047
+Ireland,IRL,Europe & Central Asia,1207582357
+Slovak Republic,SVK,Europe & Central Asia,1280643981
+Kazakhstan,KAZ,Europe & Central Asia,1613589333
+Hungary,HUN,Europe & Central Asia,1642338440
+Azerbaijan,AZE,Europe & Central Asia,1708941176
+Czech Republic,CZE,Europe & Central Asia,2710017583
+Austria,AUT,Europe & Central Asia,3367460383
+Finland,FIN,Europe & Central Asia,3849013845
+Denmark,DNK,Europe & Central Asia,4228194254
+Portugal,PRT,Europe & Central Asia,4247842971
+Romania,ROU,Europe & Central Asia,4608673550
+Ukraine,UKR,Europe & Central Asia,4750219044
+Switzerland,CHE,Europe & Central Asia,4795847181
+Belgium,BEL,Europe & Central Asia,4959692173
+Greece,GRC,Europe & Central Asia,5227152013
+Sweden,SWE,Europe & Central Asia,5755367603
+Norway,NOR,Europe & Central Asia,7067073381
+Netherlands,NLD,Europe & Central Asia,11242755804
+Poland,POL,Europe & Central Asia,11596155291
+Spain,ESP,Europe & Central Asia,18248291491
+Turkey,TUR,Europe & Central Asia,18967113031
+Italy,ITA,Europe & Central Asia,27807513898
+Germany,DEU,Europe & Central Asia,49470627811
+United Kingdom,GBR,Europe & Central Asia,49997192521
+Russian Federation,RUS,Europe & Central Asia,61387546980
+France,FRA,Europe & Central Asia,63799676593
+Haiti,HTI,Latin America & Caribbean,79690.88817
+Belize,BLZ,Latin America & Caribbean,23083112.5
+Guyana,GUY,Latin America & Caribbean,59809426.6
+Nicaragua,NIC,Latin America & Caribbean,81593932.69
+Trinidad and Tobago,TTO,Latin America & Caribbean,169332467.8
+Jamaica,JAM,Latin America & Caribbean,207772685.8
+El Salvador,SLV,Latin America & Caribbean,266460000
+Guatemala,GTM,Latin America & Caribbean,278420891.5
+Paraguay,PRY,Latin America & Caribbean,386556389.6
+Honduras,HND,Latin America & Caribbean,410414895.1
+Dominican Republic,DOM,Latin America & Caribbean,602522387
+Bolivia,BOL,Latin America & Caribbean,618842083.1
+Uruguay,URY,Latin America & Caribbean,1168130814
+Ecuador,ECU,Latin America & Caribbean,2549400000
+Peru,PER,Latin America & Caribbean,2708912280
+Argentina,ARG,Latin America & Caribbean,4144991771
+Chile,CHL,Latin America & Caribbean,5570724563
+Mexico,MEX,Latin America & Caribbean,6567509336
+Colombia,COL,Latin America & Caribbean,10602860967
+Brazil,BRA,Latin America & Caribbean,27766427104
+Malta,MLT,Middle East & North Africa,69284609.85
+Tunisia,TUN,Middle East & North Africa,844227367.1
+Bahrain,BHR,Middle East & North Africa,1396808511
+Jordan,JOR,Middle East & North Africa,1957746479
+Lebanon,LBN,Middle East & North Africa,2775557816
+"Egypt, Arab Rep.",EGY,Middle East & North Africa,3109997892
+Morocco,MAR,Middle East & North Africa,3696856945
+Iraq,IRQ,Middle East & North Africa,6317977150
+Oman,OMN,Middle East & North Africa,6710013004
+Kuwait,KWT,Middle East & North Africa,7296266526
+Algeria,DZA,Middle East & North Africa,9583724288
+"Iran, Islamic Rep.",IRN,Middle East & North Africa,13194151137
+Israel,ISR,Middle East & North Africa,15946788601
+Saudi Arabia,SAU,Middle East & North Africa,67554666667
+Canada,CAN,North America,21620598712
+United States,USA,North America,6.48798E+11
+Afghanistan,AFG,South Asia,198086263.3
+Nepal,NPL,South Asia,398521544.9
+Sri Lanka,LKA,South Asia,1681433577
+Bangladesh,BGD,South Asia,3894695211
+Pakistan,PAK,South Asia,11375525626
+India,IND,South Asia,66510289108
+Cabo Verde,CPV,Sub-Saharan Africa,10714071.13
+"Gambia, The",GMB,Sub-Saharan Africa,11487224.94
+Liberia,LBR,Sub-Saharan Africa,15786500
+Seychelles,SYC,Sub-Saharan Africa,22823282.54
+Mauritius,MUS,Sub-Saharan Africa,23202895.56
+Sierra Leone,SLE,Sub-Saharan Africa,29622478.1
+Central African Republic,CAF,Sub-Saharan Africa,30951301.32
+Lesotho,LSO,Sub-Saharan Africa,51064347.75
+Malawi,MWI,Sub-Saharan Africa,58369173.44
+South Sudan,SSD,Sub-Saharan Africa,59353054.3
+Somalia,SOM,Sub-Saharan Africa,61556000
+Burundi,BDI,Sub-Saharan Africa,65436595.26
+Madagascar,MDG,Sub-Saharan Africa,73258425.24
+Eswatini,SWZ,Sub-Saharan Africa,87787078.57
+Benin,BEN,Sub-Saharan Africa,90212425.99
+Togo,TGO,Sub-Saharan Africa,104378994.6
+Rwanda,RWA,Sub-Saharan Africa,118959174
+Mozambique,MOZ,Sub-Saharan Africa,145206801.9
+Mauritania,MRT,Sub-Saharan Africa,159013353
+Guinea,GIN,Sub-Saharan Africa,209150578.3
+Ghana,GHA,Sub-Saharan Africa,218444253.6
+Niger,NER,Sub-Saharan Africa,229639906.1
+Chad,TCD,Sub-Saharan Africa,232930989.8
+Gabon,GAB,Sub-Saharan Africa,261217395.1
+"Congo, Rep.",COG,Sub-Saharan Africa,292260465.3
+"Congo, Dem. Rep.",COD,Sub-Saharan Africa,295348364.6
+Burkina Faso,BFA,Sub-Saharan Africa,312467611
+Senegal,SEN,Sub-Saharan Africa,346772974.6
+Zambia,ZMB,Sub-Saharan Africa,378025431
+Uganda,UGA,Sub-Saharan Africa,408367566.7
+Zimbabwe,ZWE,Sub-Saharan Africa,420364000
+Cameroon,CMR,Sub-Saharan Africa,429892180.6
+Namibia,NAM,Sub-Saharan Africa,451546508.8
+Mali,MLI,Sub-Saharan Africa,495165301
+Ethiopia,ETH,Sub-Saharan Africa,496621069.7
+Botswana,BWA,Sub-Saharan Africa,529481042
+Cote d'Ivoire,CIV,Sub-Saharan Africa,607848217.9
+Tanzania,TZA,Sub-Saharan Africa,675475234.1
+Sudan,SDN,Sub-Saharan Africa,1047878720
+Kenya,KEN,Sub-Saharan Africa,1097458153
+Angola,AGO,Sub-Saharan Africa,1983613748
+Nigeria,NGA,Sub-Saharan Africa,2043051719
+South Africa,ZAF,Sub-Saharan Africa,3639879165

@@ -2,43 +2,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="576pt" height="576pt" viewBox="0 0 576 576" version="1.1">
 <defs>
 <clipPath id="clip1">
-  <path d="M 17.933594 68.4375 L 559 68.4375 L 559 559 L 17.933594 559 Z M 17.933594 68.4375 "/>
+  <path d="M 17.933594 68.4375 L 558.066406 68.4375 L 558.066406 558.066406 L 17.933594 558.066406 Z M 17.933594 68.4375 "/>
 </clipPath>
 <clipPath id="clip2">
-  <path d="M 76 68.4375 L 78 68.4375 L 78 512 L 76 512 Z M 76 68.4375 "/>
+  <path d="M 76 68.4375 L 78 68.4375 L 78 511.277344 L 76 511.277344 Z M 76 68.4375 "/>
 </clipPath>
 <clipPath id="clip3">
-  <path d="M 122 68.4375 L 123 68.4375 L 123 512 L 122 512 Z M 122 68.4375 "/>
+  <path d="M 122 68.4375 L 123 68.4375 L 123 511.277344 L 122 511.277344 Z M 122 68.4375 "/>
 </clipPath>
 <clipPath id="clip4">
-  <path d="M 167 68.4375 L 169 68.4375 L 169 512 L 167 512 Z M 167 68.4375 "/>
+  <path d="M 167 68.4375 L 169 68.4375 L 169 511.277344 L 167 511.277344 Z M 167 68.4375 "/>
 </clipPath>
 <clipPath id="clip5">
-  <path d="M 213 68.4375 L 215 68.4375 L 215 512 L 213 512 Z M 213 68.4375 "/>
+  <path d="M 213 68.4375 L 215 68.4375 L 215 511.277344 L 213 511.277344 Z M 213 68.4375 "/>
 </clipPath>
 <clipPath id="clip6">
-  <path d="M 259 68.4375 L 261 68.4375 L 261 512 L 259 512 Z M 259 68.4375 "/>
+  <path d="M 259 68.4375 L 261 68.4375 L 261 511.277344 L 259 511.277344 Z M 259 68.4375 "/>
 </clipPath>
 <clipPath id="clip7">
-  <path d="M 305 68.4375 L 307 68.4375 L 307 512 L 305 512 Z M 305 68.4375 "/>
+  <path d="M 305 68.4375 L 307 68.4375 L 307 511.277344 L 305 511.277344 Z M 305 68.4375 "/>
 </clipPath>
 <clipPath id="clip8">
-  <path d="M 351 68.4375 L 353 68.4375 L 353 512 L 351 512 Z M 351 68.4375 "/>
+  <path d="M 351 68.4375 L 353 68.4375 L 353 511.277344 L 351 511.277344 Z M 351 68.4375 "/>
 </clipPath>
 <clipPath id="clip9">
-  <path d="M 397 68.4375 L 398 68.4375 L 398 512 L 397 512 Z M 397 68.4375 "/>
+  <path d="M 397 68.4375 L 398 68.4375 L 398 511.277344 L 397 511.277344 Z M 397 68.4375 "/>
 </clipPath>
 <clipPath id="clip10">
-  <path d="M 443 68.4375 L 444 68.4375 L 444 512 L 443 512 Z M 443 68.4375 "/>
+  <path d="M 443 68.4375 L 444 68.4375 L 444 511.277344 L 443 511.277344 Z M 443 68.4375 "/>
 </clipPath>
 <clipPath id="clip11">
-  <path d="M 488 68.4375 L 490 68.4375 L 490 512 L 488 512 Z M 488 68.4375 "/>
+  <path d="M 488 68.4375 L 490 68.4375 L 490 511.277344 L 488 511.277344 Z M 488 68.4375 "/>
 </clipPath>
 <clipPath id="clip12">
-  <path d="M 534 68.4375 L 536 68.4375 L 536 512 L 534 512 Z M 534 68.4375 "/>
+  <path d="M 534 68.4375 L 536 68.4375 L 536 511.277344 L 534 511.277344 Z M 534 68.4375 "/>
 </clipPath>
 </defs>
-<g id="surface86">
+<g id="surface36">
 <rect x="0" y="0" width="576" height="576" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <rect x="0" y="0" width="576" height="576" style="fill:rgb(94.117647%,93.333333%,92.941176%);fill-opacity:1;stroke:none;"/>
 <path style="fill:none;stroke-width:0.0075;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(100%,100%,100%);stroke-opacity:1;stroke-miterlimit:10;" d="M 0 576 L 576 576 L 576 0 L 0 0 Z M 0 576 "/>

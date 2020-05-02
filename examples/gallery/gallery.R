@@ -318,6 +318,3 @@ example_scatter_cons_facet <- function() {
         title = "Turnout was higher in older, less urban constituencies",
         subtitle = "Constituencies by age, turnout and settlement class, 2017")
 }
-
-
-

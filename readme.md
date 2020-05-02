@@ -1117,6 +1117,307 @@ save_svg(
     height = 7)
 ```
 
+### Pyramid Chart
+
+<img src="examples/recipes/pyramid-chart/pyramid-chart.png" width="700" />
+
+A pyramid chart: 
+
+- Use `geom_col` to represent values with bars
+- Map `sex` to `fill` in `aes` to color each sex group differently
+- Specify labels on the `y axis` with `labs` in `scale_y_continuous`
+- Set `fill` to `NULL` in `labs` to turn off the legend title
+- Set `legend_position` to `none` in `theme_commonslib`
+- Use `scale_fill_manual` and `commonslib_color` to map a theme colour to each group
+
+```r
+# Imports ---------------------------------------------------------------------
+
+library(tidyverse)
+library(clcharts)
+
+# Read in and prepare the data ------------------------------------------------
+
+# Load the data from the csv as a dataframe
+df <- read_csv("pyramid-chart.csv")
+
+# Create age range groups and cut age variable to groups
+age_breaks <- c(seq(from = -1, to = 90, by = 5), 90)
+age_labels <- c("0-4", "5-9", "10-14", "15-19", "20-24",
+  "25-29", "30-34", "35-39", "40-44", "45-49", "50-54",
+  "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90+")
+df$age_group <- cut(df$age, breaks = age_breaks, labels = age_labels)
+
+# Multiply female by -1 so that columns will split left and right
+df$female <- df$female * -1 
+
+# Privot dataframe from wide to long and sum population for each age group
+df <- df %>% 
+  pivot_longer(-c(age, age_group), names_to = "sex", values_to = "count") %>% 
+  group_by(sex, age_group) %>% 
+  summarise(count = sum(count))
+
+# Divide count by one thound to get values in thousands
+df$count <- df$count / 1000
+
+# Create plot -----------------------------------------------------------------
+
+# Use ggplot to create a plot with data and mappings
+plot <- ggplot(
+  data = df,
+  mapping = aes(x = age_group, y = count, fill = sex)) +
+  # Add a col geometry for columns: use width = 0.8 to match house style;
+  # geom_col will plot the values for each category
+  geom_col(width = 0.8) +
+  # Configure the the x and y axes: we set the y axis breaks and limits, and
+  # we turn off the y-axis expansion
+  scale_x_discrete() +
+  scale_y_continuous(
+    limits = c(-2500, 2500),
+    breaks = seq(-2500, 2500, 500),
+    labels = comma(c(
+      seq(from = 2500, to = 500, by = -500), seq(from = 0, to = 2500, by = 500)),
+    expand = c(0,0))) +
+  # Use the coord_flip function to flip the axes: this will turn a vertical
+  # column chart into a horizontal bar chart
+  coord_flip() +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = NULL,
+    caption = "Source: ONS, Mid-year population 2016") +
+  # Use annotate_commonslib to add annotations to a plot: this function does
+  # the same thing as annotate but it automatically sets the fonts to match
+  # the house style; position each annotation using values on the axis scales
+  annotate_commonslib(
+    x = 19,
+    y = 1750,
+    label = "Male",
+    size = 3.5) +
+  annotate_commonslib(
+    x = 19,
+    y = -1750,
+    label = "Female",
+    size = 3.5) +
+  # Add the Commons Library theme: we don't specify settings for the axes and
+  # grid which means we are using the defaults; we set the legend and caption
+  # positions
+  theme_commonslib(
+    legend_position = "none",
+    caption_position = "right",
+    axes = "h",
+    grid = "v") +
+  scale_fill_manual(values = c(
+    commonslib_color("commons_green"),
+    commonslib_color("ocean_green")))
+
+# After creating the plot, add a title and subtitle with add_commonslib_titles
+plot <- add_commonslib_titles(
+  plot, 
+  title = "Women outnumber men over the age of 80",
+  subtitle = "UK mid-year 2016 population by gender and age, Millions")
+
+# Save the plot in different formats ------------------------------------------
+
+# Save a high resolution export of the plot as a png
+save_png(
+  "pyramid-chart.png",
+  plot = plot,
+  width = 8,
+  height = 8)
+
+# Save an editable verson of the plot as an svg
+save_svg(
+  "pyramid-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 8)
+```
+
+### Heatmap Chart
+
+<img src="examples/recipes/heatmap-chart/heatmap-chart.png" width="700" />
+
+A heatmap chart:
+
+- Use `geom_tile` to represent values with tiles
+- Map `control` to `fill` in `aes` to color each tile
+- Add in tile labels with `geom_text_commonslib`
+- Move the `x axis` to the top with `position` in `scale_x_discrete`
+- Use `scale_fill_manual` and `commonslib_party_color` to map a theme colour to each tile
+
+```r
+# Imports ---------------------------------------------------------------------
+
+library(tidyverse)
+library(clcharts)
+
+# Read in and prepare the data ------------------------------------------------
+
+# Load the data from the csv as a dataframe
+df <- read_csv("heatmap-london.csv")
+
+# Pivot dataframe from wide to long
+df <- df %>% 
+  pivot_longer(-authority, names_to = "year", values_to = "control")
+
+# Create plot -----------------------------------------------------------------
+
+# Use ggplot to create a plot with data and mappings
+plot <- ggplot(
+  data = df,
+  mapping = aes(x = year, y = authority)) +
+  # Add a tile geometry for map: geom_tile will plot the values
+  # for each category, and colour "#dad5d1" to match plot background
+  geom_tile(
+    mapping = aes(fill = control),
+    colour = "#dad5d1") +
+  # Add a text geometry for labels: geom_text_commonslib uses the right fonts
+  geom_text_commonslib(
+    mapping = aes(label = control),
+    size = 2) +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL, 
+    y = NULL, 
+    caption = str_c("Source: Rallings and Thrasher, Local Elections in Britain",
+    "; House of Commons Library")) +
+  # Configure the  x and y axes: we set the x axis to be at the top of the chart
+  # and y axis limits so that authority names appear in alphabetical order top
+  # to bottom
+  scale_x_discrete(position = "top") +
+  scale_y_discrete(limits = rev(levels(as.factor(df$authority)))) +
+  # Use scale_fill_manual and commonslib_party_color to set category colors
+  scale_fill_manual(values = c(
+    "CON" = commonslib_party_color("conservative"),
+    "LAB" = commonslib_party_color("labour"),
+    "LD" = commonslib_party_color("lib_dem"),
+    "NOC" = commonslib_party_color("other"))) +
+  # Add the Commons Library theme: we don't specify settings for the grid
+  # which means we are using the defaults; we set the legend, caption
+  # positions, and axes
+  theme_commonslib(
+    legend_position = "none",
+    caption_position = "right",
+    axes = "")
+
+# After creating the plot, add a title and subtitle with add_commonslib_titles
+plot <- add_commonslib_titles(
+  plot, 
+  title = "Labour controlled the most London councils in 2018",
+  subtitle = "London council control immediately after local elections")
+  
+# Save the plot in different formats ------------------------------------------
+
+# Save a high resolution export of the plot as a png
+save_png(
+  "heatmap-chart.png",
+  plot = plot,
+  width = 8,
+  height = 8)
+
+# Save an editable verson of the plot as an svg
+save_svg(
+  "heatmap-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 8)
+```
+
+### Treemap Chart
+
+<img src="examples/recipes/treemap-chart/treemap-chart.png" width="700" />
+
+A treemap chart - you need to install the `treemapify` package with `install.packages("treemapify")` to make this chart:
+
+- Use `geom_treemap` to represent values with treemap tiles
+- Map `value` to `area` in `aes` to size each tile
+- Add in labels with `geom_treemap_text` and `geom_treemap_subgroup_text`
+- Use `scale_fill_manual` and `commonslib_color` to map a theme colour to each region
+
+```r
+# Imports ---------------------------------------------------------------------
+
+library(tidyverse)
+library(clcharts)
+library(treemapify)
+
+# Read in and prepare the data ------------------------------------------------
+
+# Load the data from the csv as a dataframe
+df <- read_csv("treemap-chart.csv")
+
+# Divide value by one million to get the value in millions
+df$value <- df$value / 1000000
+
+# Create plot -----------------------------------------------------------------
+
+plot <- ggplot(
+  data = df,
+  mapping = aes(
+    area = value,
+    fill = region,
+    subgroup = region,
+    label = country)) +
+  # Add a treemap tile geometry: geom_treemap will generate tile area by value
+  # for each observation, specify seperating lines to be the same colour as plot
+  # background and line thickness
+  geom_treemap(
+    colour = "#dad5d1",
+    size = 0.1) +
+  # Add treemap text geometry for labels: set font family as "Open Sans" and
+  # text color as white ("#ffffff") - geom_text_commonslib DOESN'T work here
+  geom_treemap_text(
+    color = "#ffffff",
+    family = "Open Sans") +
+  geom_treemap_subgroup_text(
+    color = "#ffffff",
+    family = "Open Sans",
+    fontface = "bold",
+    alpha = 0.5) +
+  # Set labels for the caption: DON'T set titles here
+  labs(
+    caption = "Source: World Bank, Military Expenditure") +
+  # Use scale_fill_manual and commonslib_color to set region colors
+  scale_fill_manual(values = c(
+    "North America" = commonslib_color("commons_green"),
+    "Europe & Central Asia" =  commonslib_color("tangerine"),
+    "East Asia & Pacific" = commonslib_color("grape"),
+    "Middle East & North Africa" = commonslib_color("cerulean_blue"),
+    "South Asia" = commonslib_color("ocean_green"),
+    "Latin America & Caribbean" = commonslib_color("lilac"),
+    "Sub-Saharan Africa" = commonslib_color("pacific_blue"))) +
+  # Add the Commons Library theme: we set the legend, caption positions,
+  # and axes
+  theme_commonslib(
+    axes = "",
+    caption_position = "right",
+    legend_position = "none")
+
+# After creating the plot, add a title and subtitle with add_commonslib_titles
+plot <- add_commonslib_titles(
+  plot, 
+  title = "The United States has the largest military expenditure in the world",
+  subtitle = "Military expenditure by region and country in 2018")
+  
+# Save the plot in different formats ------------------------------------------
+
+# Save a high resolution export of the plot as a png
+save_png(
+  "treemap-chart.png",
+  plot = plot,
+  width = 8,
+  height = 8)
+
+# Save an editable verson of the plot as an svg
+save_svg(
+  "treemap-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 8)
+ ```
+
 ---
 
 ## Reference

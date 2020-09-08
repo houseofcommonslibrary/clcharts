@@ -7,12 +7,12 @@
 #' @export
 
 save_svg <- function(plot, filename, width, height) {
-  grDevices::svg(
-    filename = filename,
-    width = width,
-    height = height)
-  print(plot)
-  device <- grDevices::dev.off()
+    grDevices::svg(
+        filename = filename,
+        width = width,
+        height = height)
+    print(plot)
+    device <- grDevices::dev.off()
 }
 
 #' Save a plot as a png
@@ -26,20 +26,20 @@ save_svg <- function(plot, filename, width, height) {
 
 save_png <- function(plot, filename, width, height, dpi = 400) {
 
-    svgname <- file.path(
-      tempdir(),
-      stringr::str_glue("saveplot-{uuid::UUIDgenerate()}.svg"))
+        svgname <- file.path(
+            tempdir(),
+            stringr::str_glue("saveplot-{uuid::UUIDgenerate()}.svg"))
 
-	  grDevices::svg(
-	    filename = svgname,
-	    width = width,
-	    height = height)
-	  print(plot)
-	  grDevices::dev.off()
+	    grDevices::svg(
+	        filename = svgname,
+	        width = width,
+	        height = height)
+	    print(plot)
+	    grDevices::dev.off()
 
-	  rsvg::rsvg_png(
-	    svgname,
-	    filename,
-	    width = width * dpi,
-	    height = height * dpi)
+	    rsvg::rsvg_png(
+	        svgname,
+	        filename,
+	        width = width * dpi,
+	        height = height * dpi)
 }

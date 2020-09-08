@@ -19,23 +19,23 @@
 #' @keywords internal
 
 load_fonts <- function(
-    national_semibold = getOption("clcharts.national_semibold"),
-    national_book = getOption("clcharts.national_book"),
-    open_sans_regular = getOption("clcharts.open_sans_regular"),
-    open_sans_bold = getOption("clcharts.open_sans_bold")) {
+  national_semibold = getOption("clcharts.national_semibold"),
+  national_book = getOption("clcharts.national_book"),
+  open_sans_regular = getOption("clcharts.open_sans_regular"),
+  open_sans_bold = getOption("clcharts.open_sans_bold")) {
 
-    sysfonts::font_add(
-        family = "National-LFSN Semibd",
-        regular = national_semibold)
+  sysfonts::font_add(
+    family = "National-LFSN Semibd",
+    regular = national_semibold)
 
-    sysfonts::font_add(
-        family = "National-LFSN Book",
-        regular = national_book)
+  sysfonts::font_add(
+    family = "National-LFSN Book",
+    regular = national_book)
 
-    sysfonts::font_add(
-        family = "Open Sans",
-        regular = open_sans_regular,
-        bold = open_sans_bold)
+  sysfonts::font_add(
+    family = "Open Sans",
+    regular = open_sans_regular,
+    bold = open_sans_bold)
 
-    showtext::showtext_auto()
+  showtext::showtext_auto()
 }

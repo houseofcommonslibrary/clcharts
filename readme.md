@@ -74,32 +74,32 @@ set.seed(2001)
 
 # Create some random data to plot
 df <- tibble(
-    time = 1:10,
-    value = time + 5 + rnorm(10))
+  time = 1:10,
+  value = time + 5 + rnorm(10))
 
 # Use the ggplot function to set up the plot with the data
 plot <- ggplot(
-        # Specify that df contains the data
-        data = df,
-        # Use aes to map time to the x axis and value to the y axis
-        mapping = aes(x = time, y = value)) +
+    # Specify that df contains the data
+    data = df,
+    # Use aes to map time to the x axis and value to the y axis
+    mapping = aes(x = time, y = value)) +
 
-    # Use the geom_line function to indicate the data should be drawn as a line
-    geom_line(color = "#006548", size = 1.1) +
+  # Use the geom_line function to indicate the data should be drawn as a line
+  geom_line(color = "#006548", size = 1.1) +
 
-    # Use the labs function to set the title, subtitle, and axis titles
-    labs(
-        title = "Something has increased",
-        subtitle = "The value of something over time",
-        x = "Time",
-        y = "Value") +
+  # Use the labs function to set the title, subtitle, and axis titles
+  labs(
+    title = "Something has increased",
+    subtitle = "The value of something over time",
+    x = "Time",
+    y = "Value") +
 
-    # Use scale_x and scale_y functions to control each axis
-    scale_x_continuous(breaks = seq(0, 10, 2)) +
-    scale_y_continuous(limits = c(0, 20)) +
+  # Use scale_x and scale_y functions to control each axis
+  scale_x_continuous(breaks = seq(0, 10, 2)) +
+  scale_y_continuous(limits = c(0, 20)) +
 
-    # Use the theme_commonslib function to set the plot style
-    theme_commonslib()
+  # Use the theme_commonslib function to set the plot style
+  theme_commonslib()
 
 # Save the plot
 save_png(plot, "ggplot-basics-1.png", width = 8, height = 5)
@@ -122,8 +122,8 @@ Create the plot *without* setting the title and subtitle in `labs`.
 ```r
 # Don't set the title and subtitle in the labs function
 labs(
-    x = "Time",
-    y = "Value") +
+  x = "Time",
+  y = "Value") +
 ```
 
 Add the title and subtitle afterwards using `add_commonslib_titles`.
@@ -131,9 +131,9 @@ Add the title and subtitle afterwards using `add_commonslib_titles`.
 ```r
 # Add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Something has increased",
-    subtitle = "The value of something over time")
+  plot,
+  title = "Something has increased",
+  subtitle = "The value of something over time")
 ```
 
 Making these changes will give you a plot with the correct title formatting, like this.
@@ -225,61 +225,61 @@ df$premises = df$premises / 1000000
 plot <- ggplot(
     data = df,
     mapping = aes(x = region, y = premises)) +
-    # Add a col geometry for columns: use width = 0.8 to match house style;
-    # geom_col will plot the values for each region;
-    # we set the fill color in geom_bar as color does not represent data
-    geom_col(
-        width = 0.8,
-        fill = commonslib_color("commons_green")) +
-    # Set labels for the axes, legend, and caption: DON'T set titles here
-    labs(
-        x = NULL,
-        y = NULL) +
-    # Configure the the x and y axes: we set the y axis breaks and limits, and
-    # we turn off the y-axis expansion
-    scale_x_discrete() +
-    scale_y_continuous(
-        limits = c(0, 4.5),
-        breaks = seq(0, 4, 1),
-        expand = c(0,0)) +
-    # Use the coord_flip function to flip the axes: this will turn a vertical
-    # column chart into a horizontal bar chart
-    coord_flip() +
-    # Use annotate_commonslib to add annotations to a plot: this function does
-    # the same thing as annotate but it automatically sets the fonts to match
-    # the house style; position each annotation using values on the axis scales
-    annotate_commonslib(
-        x = 0.58,
-        y = 3.5,
-        label = "Millions",
-        size = 4.5) +
-    # Add the Commons Library theme: we turn off the axes and set gridlines to
-    # vertical
-    theme_commonslib(
-        axes = "",
-        grid = "v")
+  # Add a col geometry for columns: use width = 0.8 to match house style;
+  # geom_col will plot the values for each region;
+  # we set the fill color in geom_bar as color does not represent data
+  geom_col(
+    width = 0.8,
+    fill = commonslib_color("commons_green")) +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL,
+    y = NULL) +
+  # Configure the the x and y axes: we set the y axis breaks and limits, and
+  # we turn off the y-axis expansion
+  scale_x_discrete() +
+  scale_y_continuous(
+    limits = c(0, 4.5),
+    breaks = seq(0, 4, 1),
+    expand = c(0,0)) +
+  # Use the coord_flip function to flip the axes: this will turn a vertical
+  # column chart into a horizontal bar chart
+  coord_flip() +
+  # Use annotate_commonslib to add annotations to a plot: this function does
+  # the same thing as annotate but it automatically sets the fonts to match
+  # the house style; position each annotation using values on the axis scales
+  annotate_commonslib(
+    x = 0.58,
+    y = 3.5,
+    label = "Millions",
+    size = 4.5) +
+  # Add the Commons Library theme: we turn off the axes and set gridlines to
+  # vertical
+  theme_commonslib(
+    axes = "",
+    grid = "v")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "There were fewer premises in the North East",
-    subtitle = "Number of premises by English region")
+  plot,
+  title = "There were fewer premises in the North East",
+  subtitle = "Number of premises by English region")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "bar-chart-annotations.png",
-    plot = plot,
-    width = 6,
-    height = 5)
+  "bar-chart-annotations.png",
+  plot = plot,
+  width = 6,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "bar-chart-annotations.svg",
-    plot = plot,
-    width = 6,
-    height = 5)
+  "bar-chart-annotations.svg",
+  plot = plot,
+  width = 6,
+  height = 5)
 ```
 
 ### Vertical Column Chart
@@ -313,55 +313,55 @@ df$region <- fct_rev(reorder(df$region, df$region, length))
 
 # Use ggplot to create a plot with data
 plot <- ggplot(data = df) +
-    # Add a bar geometry for columns: use width = 0.8 to match house style;
-    # geom_bar will plot the number of items in each category;
-    # we set the fill color in geom_bar as color does not represent data
-    geom_bar(
-        mapping = aes(x = region),
-        width = 0.8,
-        fill = commonslib_color("commons_green")) +
-    # Add a text geometry for labels: geom_text_commonslib uses the right fonts
-    geom_text_commonslib(
-        mapping = aes(x = region, label = ..count..),
-        stat = "count",
-        vjust = "top",
-        nudge_y = -3) +
-    # Set labels for the axes and caption: DON'T set titles here
-    labs(
-        x = "Country or region",
-        y = "Number of constituencies",
-        caption = "Source: House of Commons Library") +
-    # Configure the the x and y axes: we remove the expansion for the y axis
-    scale_x_discrete() +
-    scale_y_continuous(expand = c(0,0)) +
-    # Add the Commons Library theme: we set a bottom axis, horizontal
-    # gridlines, and set the caption on the left
-    theme_commonslib(
-        axes = "b",
-        grid = "h",
-        caption_position = "left")
+  # Add a bar geometry for columns: use width = 0.8 to match house style;
+  # geom_bar will plot the number of items in each category;
+  # we set the fill color in geom_bar as color does not represent data
+  geom_bar(
+    mapping = aes(x = region),
+    width = 0.8,
+    fill = commonslib_color("commons_green")) +
+  # Add a text geometry for labels: geom_text_commonslib uses the right fonts
+  geom_text_commonslib(
+    mapping = aes(x = region, label = ..count..),
+    stat = "count",
+    vjust = "top",
+    nudge_y = -3) +
+  # Set labels for the axes and caption: DON'T set titles here
+  labs(
+    x = "Country or region",
+    y = "Number of constituencies",
+    caption = "Source: House of Commons Library") +
+  # Configure the the x and y axes: we remove the expansion for the y axis
+  scale_x_discrete() +
+  scale_y_continuous(expand = c(0,0)) +
+  # Add the Commons Library theme: we set a bottom axis, horizontal
+  # gridlines, and set the caption on the left
+  theme_commonslib(
+    axes = "b",
+    grid = "h",
+    caption_position = "left")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Countries and regions vary in representation",
-    subtitle = "Constituencies by country or region, United Kingdom")
+  plot,
+  title = "Countries and regions vary in representation",
+  subtitle = "Constituencies by country or region, United Kingdom")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "column-chart-labels.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "column-chart-labels.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "column-chart-labels.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "column-chart-labels.svg",
+  plot = plot,
+  width = 8,
+  height = 5)
 ```
 
 ### Stacked Column Chart
@@ -399,57 +399,57 @@ df$nationality <- factor(df$nationality, levels = c("Non-EU", "EU", "British"))
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = year, y = estimate, fill = nationality)) +
-    # Add a col geometry for columns: use width = 0.8 to match house style;
-    # geom_col will plot the values for each category
-    geom_col(width = 0.8) +
-    # Set labels for the axes, legend, and caption: DON'T set titles here
-    labs(
-        x = NULL,
-        y = NULL,
-        fill = NULL,
-        caption = "Source: ONS, Provisional LTIM estimates") +
-    # Configure the the x and y axes: we set the y axis breaks and limits, and
-    # we turn off the y-axis expansion
-    scale_x_discrete() +
-    scale_y_continuous(
-        limits = c(0, 700),
-        breaks = seq(0, 700, 100),
-        expand = c(0,0)) +
-    # Add the Commons Library theme: we don't specify settings for the axes and
-    # grid which means we are using the defaults; we set the legend and caption
-    # positions
-    theme_commonslib(
-        legend_position = "top-right",
-        caption_position = "left") +
-    # Use scale_fill_manual and commonslib_color to set category colors
-    scale_fill_manual(values = c(
-        "British" = commonslib_color("tangerine"),
-        "EU" = commonslib_color("commons_green"),
-        "Non-EU" = commonslib_color("ocean_green")))
+    data = df,
+    mapping = aes(x = year, y = estimate, fill = nationality)) +
+  # Add a col geometry for columns: use width = 0.8 to match house style;
+  # geom_col will plot the values for each category
+  geom_col(width = 0.8) +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = NULL,
+    caption = "Source: ONS, Provisional LTIM estimates") +
+  # Configure the the x and y axes: we set the y axis breaks and limits, and
+  # we turn off the y-axis expansion
+  scale_x_discrete() +
+  scale_y_continuous(
+    limits = c(0, 700),
+    breaks = seq(0, 700, 100),
+    expand = c(0,0)) +
+  # Add the Commons Library theme: we don't specify settings for the axes and
+  # grid which means we are using the defaults; we set the legend and caption
+  # positions
+  theme_commonslib(
+    legend_position = "top-right",
+    caption_position = "left") +
+  # Use scale_fill_manual and commonslib_color to set category colors
+  scale_fill_manual(values = c(
+    "British" = commonslib_color("tangerine"),
+    "EU" = commonslib_color("commons_green"),
+    "Non-EU" = commonslib_color("ocean_green")))
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Immigration is stable but the composition has changed",
-    subtitle = "Immigration by nationality in each year ending September, Thousands")
+  plot,
+  title = "Immigration is stable but the composition has changed",
+  subtitle = "Immigration by nationality in each year ending September, Thousands")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "stacked-column-chart.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "stacked-column-chart.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "stacked-column-chart.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "stacked-column-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 ```
 
@@ -480,60 +480,60 @@ df <- read_csv("line-chart.csv")
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = quarter, y = estimate, color = flow)) +
-    # Add a line geometry to draw lines: use size = 1.1 to match house style
-    geom_line(size = 1.1) +
-    # Set labels for the axes, legend, and caption: DON'T set titles here
-    labs(
-        color = NULL,
-        x = NULL,
-        y = "Thousands of people",
-        caption = "Source: ONS, Provisional LTIM estimates") +
-    # Configure the the x and y axes: we set the y axis breaks and limits
-    scale_x_date(
-        expand = c(0, 0)) +
-    scale_y_continuous(
-        breaks = seq(0, 800, 200),
-        limits = c(0, 800),
-        expand = c(0, 0)) +
-    # Add the Commons Library theme: bottom axis and horizontal gridlines
-    theme_commonslib(
-        axes = "b",
-        grid = "h") +
-    # Use scale_color_manual and commonslib_color to set colors for each lines
-    scale_color_manual(values = c(
-        "Immigration" = commonslib_color("commons_green"),
-        "Net migration" = commonslib_color("ocean_green"))) +
-    # Here we use a theme customisation to overlay the legend on the plot area:
-    # We could have used legend_position = "top-right" in theme_commonslib
-    # to put the legend at the top-right above the plot area
-    theme(
-        legend.position = c(1, 0.99),
-        legend.justification = c(1, 1),
-        legend.direction = "horizontal")
+    data = df,
+    mapping = aes(x = quarter, y = estimate, color = flow)) +
+  # Add a line geometry to draw lines: use size = 1.1 to match house style
+  geom_line(size = 1.1) +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    color = NULL,
+    x = NULL,
+    y = "Thousands of people",
+    caption = "Source: ONS, Provisional LTIM estimates") +
+  # Configure the the x and y axes: we set the y axis breaks and limits
+  scale_x_date(
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    breaks = seq(0, 800, 200),
+    limits = c(0, 800),
+    expand = c(0, 0)) +
+  # Add the Commons Library theme: bottom axis and horizontal gridlines
+  theme_commonslib(
+    axes = "b",
+    grid = "h") +
+  # Use scale_color_manual and commonslib_color to set colors for each lines
+  scale_color_manual(values = c(
+    "Immigration" = commonslib_color("commons_green"),
+    "Net migration" = commonslib_color("ocean_green"))) +
+  # Here we use a theme customisation to overlay the legend on the plot area:
+  # We could have used legend_position = "top-right" in theme_commonslib
+  # to put the legend at the top-right above the plot area
+  theme(
+    legend.position = c(1, 0.99),
+    legend.justification = c(1, 1),
+    legend.direction = "horizontal")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Net migration has fallen since the EU referendum",
-    subtitle = "International migration in the year ending each quarter")
+  plot,
+  title = "Net migration has fallen since the EU referendum",
+  subtitle = "International migration in the year ending each quarter")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "line-chart.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "line-chart.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "line-chart.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "line-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 5)
 ```
 
 ### Area Chart
@@ -558,10 +558,10 @@ library(clcharts)
 
 # Load the data from the csv as a dataframe and pivot it into a tidy format
 df <- read_csv("area-chart-annotations.csv") %>%
-    pivot_longer(
-        cols = -date,
-        names_to = "care_setting",
-        values_to = "number")
+  pivot_longer(
+    cols = -date,
+    names_to = "care_setting",
+    values_to = "number")
 
 # Turn the care_setting column into a factor: setting the order of the levels
 # controls the order of the categories from top to bottom
@@ -571,69 +571,69 @@ df$care_setting <- factor(df$care_setting, levels = c("neonatal", "maternity"))
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = date, y = number, fill = care_setting)) +
-    # Add an area geometry to fill areas based on the data
-    geom_area() +
-    # Set labels for the axes: DON'T set titles here
-    labs(
-        x = NULL,
-        y = NULL) +
-    # Configure the the x and y axes: we set the y axis breaks and limits, and
-    # we turn off the expansion on both axes
-    scale_x_date(
-        expand = c(0, 0)) +
-    scale_y_continuous(
-        label = comma,
-        limits = c(0, 9000),
-        breaks = seq(0, 9000, 3000),
-        expand = c(0, 0)) +
-    # Use annotate_commonslib to add annotations to a plot: this function does
-    # the same thing as annotate but it automatically sets the fonts to match
-    # the house style; position each annotation using values on the axis scales
-    annotate_commonslib(
-        x = as.Date("2015-01-01"),
-        y = 5500,
-        label = "Neonatal nurses",
-        color = "#202020",
-        hjust = 0) +
-    annotate_commonslib(
-        x = as.Date("2015-01-01"),
-        y = 1500,
-        label = "Maternity nurses",
-        color = "#ffffff",
-        hjust = 0) +
-    # Add the Commons Library theme: we use the default axes settings, set
-    # gridlines to horizontal, and turn off the legend
-    theme_commonslib(
-        grid = "h",
-        legend_position = "none") +
-    # Use scale_fill_manual and commonslib_color to set category colors
-    scale_fill_manual(values = c(
-        "neonatal" = commonslib_color("ocean_green"),
-        "maternity" = commonslib_color("commons_green")))
+    data = df,
+    mapping = aes(x = date, y = number, fill = care_setting)) +
+  # Add an area geometry to fill areas based on the data
+  geom_area() +
+  # Set labels for the axes: DON'T set titles here
+  labs(
+    x = NULL,
+    y = NULL) +
+  # Configure the the x and y axes: we set the y axis breaks and limits, and
+  # we turn off the expansion on both axes
+  scale_x_date(
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    label = comma,
+    limits = c(0, 9000),
+    breaks = seq(0, 9000, 3000),
+    expand = c(0, 0)) +
+  # Use annotate_commonslib to add annotations to a plot: this function does
+  # the same thing as annotate but it automatically sets the fonts to match
+  # the house style; position each annotation using values on the axis scales
+  annotate_commonslib(
+    x = as.Date("2015-01-01"),
+    y = 5500,
+    label = "Neonatal nurses",
+    color = "#202020",
+    hjust = 0) +
+  annotate_commonslib(
+    x = as.Date("2015-01-01"),
+    y = 1500,
+    label = "Maternity nurses",
+    color = "#ffffff",
+    hjust = 0) +
+  # Add the Commons Library theme: we use the default axes settings, set
+  # gridlines to horizontal, and turn off the legend
+  theme_commonslib(
+    grid = "h",
+    legend_position = "none") +
+  # Use scale_fill_manual and commonslib_color to set category colors
+  scale_fill_manual(values = c(
+    "neonatal" = commonslib_color("ocean_green"),
+    "maternity" = commonslib_color("commons_green")))
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Neonatal nurses have overtaken maternity nurses",
-    subtitle = "Maternity and neonatal nurses in England")
+  plot,
+  title = "Neonatal nurses have overtaken maternity nurses",
+  subtitle = "Maternity and neonatal nurses in England")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "area-chart-annotations.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "area-chart-annotations.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "area-chart-annotations.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "area-chart-annotations.svg",
+  plot = plot,
+  width = 8,
+  height = 5)
 ```
 
 ### Scatter Chart
@@ -664,12 +664,12 @@ df <- read_csv("scatter-chart.csv")
 # Turn the classification column into a factor: setting the order of the levels
 # controls the order of the categories in the legend from top to bottom
 settlement_classes <- c(
-    "London",
-    "Other city",
-    "Large town",
-    "Medium town",
-    "Small town",
-    "Village")
+  "London",
+  "Other city",
+  "Large town",
+  "Medium town",
+  "Small town",
+  "Village")
 
 df$classification <- factor(df$classification, levels = settlement_classes)
 
@@ -677,61 +677,61 @@ df$classification <- factor(df$classification, levels = settlement_classes)
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = median_age, y = turnout, color = classification)) +
-    # Add a point geometry to add points: set shape = 16 to match house style
-    geom_point(
-        shape = 16,
-        size = 2) +
-    # Set labels for the axes, colors and caption: DON'T set titles here
-    labs(
-        x = "Median age",
-        y = "Turnout",
-        color = "Settlement class",
-        caption = "Source: House of Commons Library") +
-    # Configure the the x and y axes: set the x axis limits; set the y axis
-    # limits and the y axis labels to show percentages to the nearest percent,
-    # turn off the expansion on both axes
-    scale_x_continuous(
-        limits = c(25, 55),
-        expand = c(0, 0)) +
-    scale_y_continuous(
-        limits = c(0.5, 0.8),
-        label = percent_format(accuracy = 1),
-        expand = c(0, 0)) +
-    # Add the Commons Library theme: we use the default axes settings and set
-    # the gridlines to both horizontal and vertical
-    theme_commonslib(grid = "hv") +
-    # Use scale_color_manual and commonslib_color to set category colors
-    scale_color_manual(values = c(
-        "London" = commonslib_color("commons_green"),
-        "Other city" = commonslib_color("ocean_green"),
-        "Large town" = commonslib_color("grape"),
-        "Medium town" = commonslib_color("lilac"),
-        "Small town" = commonslib_color("tangerine"),
-        "Village" = commonslib_color("burnt_orange")))
+    data = df,
+    mapping = aes(x = median_age, y = turnout, color = classification)) +
+  # Add a point geometry to add points: set shape = 16 to match house style
+  geom_point(
+    shape = 16,
+    size = 2) +
+  # Set labels for the axes, colors and caption: DON'T set titles here
+  labs(
+    x = "Median age",
+    y = "Turnout",
+    color = "Settlement class",
+    caption = "Source: House of Commons Library") +
+  # Configure the the x and y axes: set the x axis limits; set the y axis
+  # limits and the y axis labels to show percentages to the nearest percent,
+  # turn off the expansion on both axes
+  scale_x_continuous(
+    limits = c(25, 55),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    limits = c(0.5, 0.8),
+    label = percent_format(accuracy = 1),
+    expand = c(0, 0)) +
+  # Add the Commons Library theme: we use the default axes settings and set
+  # the gridlines to both horizontal and vertical
+  theme_commonslib(grid = "hv") +
+  # Use scale_color_manual and commonslib_color to set category colors
+  scale_color_manual(values = c(
+    "London" = commonslib_color("commons_green"),
+    "Other city" = commonslib_color("ocean_green"),
+    "Large town" = commonslib_color("grape"),
+    "Medium town" = commonslib_color("lilac"),
+    "Small town" = commonslib_color("tangerine"),
+    "Village" = commonslib_color("burnt_orange")))
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Turnout was higher in older, less urban constituencies",
-    subtitle = "Constituencies by age, turnout and settlement class, 2017")
+  plot,
+  title = "Turnout was higher in older, less urban constituencies",
+  subtitle = "Constituencies by age, turnout and settlement class, 2017")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "scatter-chart.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "scatter-chart.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "scatter-chart.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "scatter-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 5)
 ```
 
 ### Faceted Scatter Chart
@@ -760,12 +760,12 @@ df <- read_csv("scatter-chart-facets.csv")
 # Turn the classification column into a factor: setting the order of the levels
 # controls the order of the categories in the legend from top to bottom
 settlement_classes <- c(
-    "London",
-    "Other city",
-    "Large town",
-    "Medium town",
-    "Small town",
-    "Village")
+  "London",
+  "Other city",
+  "Large town",
+  "Medium town",
+  "Small town",
+  "Village")
 
 df$classification <- factor(df$classification, levels = settlement_classes)
 
@@ -773,67 +773,67 @@ df$classification <- factor(df$classification, levels = settlement_classes)
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = median_age, y = turnout, color = classification)) +
-    # Add a point geometry to add points: set shape = 16 to match house style
-    geom_point(
-        shape = 16,
-        size = 2,
-        alpha = 0.6) +
-    # Use facet_wrap to set the variable to facet with
-    facet_wrap(~ classification) +
-    # Set labels for the axes, colors and caption: DON'T set titles here
-    labs(
-        x = "Median age",
-        y = "Turnout",
-        color = "Settlement class",
-        caption = "Source: House of Commons Library") +
-    # Configure the the x and y axes: set the x axis limits; set the y axis
-    # limits and the y axis labels to show percentages to the nearest percent,
-    # turn off the expansion on both axes
-    scale_x_continuous(
-        limits = c(25, 55),
-        expand = c(0, 0)) +
-    scale_y_continuous(
-        limits = c(0.5, 0.85),
-        label = percent_format(accuracy = 1),
-        expand = c(0, 0)) +
-    # Add the Commons Library theme: we turn off the axes, set the gridlines to
-    # both horizontal and vertical, and turn off the legend
-    theme_commonslib(
-        axes = "",
-        grid = "hv",
-        legend_position = "none") +
-    # Use scale_color_manual and commonslib_color to set category colors
-    scale_color_manual(values = c(
-        "London" = commonslib_color("commons_green"),
-        "Other city" = commonslib_color("ocean_green"),
-        "Large town" = commonslib_color("grape"),
-        "Medium town" = commonslib_color("lilac"),
-        "Small town" = commonslib_color("tangerine"),
-        "Village" = commonslib_color("burnt_orange")))
+    data = df,
+    mapping = aes(x = median_age, y = turnout, color = classification)) +
+  # Add a point geometry to add points: set shape = 16 to match house style
+  geom_point(
+    shape = 16,
+    size = 2,
+    alpha = 0.6) +
+  # Use facet_wrap to set the variable to facet with
+  facet_wrap(~ classification) +
+  # Set labels for the axes, colors and caption: DON'T set titles here
+  labs(
+    x = "Median age",
+    y = "Turnout",
+    color = "Settlement class",
+    caption = "Source: House of Commons Library") +
+  # Configure the the x and y axes: set the x axis limits; set the y axis
+  # limits and the y axis labels to show percentages to the nearest percent,
+  # turn off the expansion on both axes
+  scale_x_continuous(
+    limits = c(25, 55),
+    expand = c(0, 0)) +
+  scale_y_continuous(
+    limits = c(0.5, 0.85),
+    label = percent_format(accuracy = 1),
+    expand = c(0, 0)) +
+  # Add the Commons Library theme: we turn off the axes, set the gridlines to
+  # both horizontal and vertical, and turn off the legend
+  theme_commonslib(
+    axes = "",
+    grid = "hv",
+    legend_position = "none") +
+  # Use scale_color_manual and commonslib_color to set category colors
+  scale_color_manual(values = c(
+    "London" = commonslib_color("commons_green"),
+    "Other city" = commonslib_color("ocean_green"),
+    "Large town" = commonslib_color("grape"),
+    "Medium town" = commonslib_color("lilac"),
+    "Small town" = commonslib_color("tangerine"),
+    "Village" = commonslib_color("burnt_orange")))
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Turnout was higher in older, less urban constituencies",
-    subtitle = "Constituencies by age, turnout and settlement class, 2017")
+  plot,
+  title = "Turnout was higher in older, less urban constituencies",
+  subtitle = "Constituencies by age, turnout and settlement class, 2017")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "scatter-chart-facets.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "scatter-chart-facets.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "scatter-chart-facets.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "scatter-chart-facets.svg",
+  plot = plot,
+  width = 8,
+  height = 5)
 ```
 
 ### Smoothed Ridge Chart
@@ -862,12 +862,12 @@ df <- read_csv("ridge-chart-smooth.csv")
 # Turn the classification column into a factor: setting the order of the levels
 # controls the order of the categories in the legend from top to bottom
 settlement_classes <- c(
-    "London",
-    "Other city",
-    "Large town",
-    "Medium town",
-    "Small town",
-    "Village")
+  "London",
+  "Other city",
+  "Large town",
+  "Medium town",
+  "Small town",
+  "Village")
 
 df$classification <- factor(df$classification, levels = settlement_classes)
 
@@ -875,53 +875,53 @@ df$classification <- factor(df$classification, levels = settlement_classes)
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = median_age, y = classification)) +
-    # Add a density ridgeline geometry to create smoothed histograms;
-    # scale should be less than one to stop bins overlapping;
-    # set both fill and color to the same green
-    geom_density_ridges(
-        fill = commonslib_color("commons_green"),
-        color = commonslib_color("commons_green"),
-        size = 0.2,
-        scale = 0.8) +
-    # Set labels for the axes, colors and caption: DON'T set titles here
-    labs(
-        x = "Median age",
-        y = NULL,
-        caption = "Source: House of Commons Library") +
-    # Configure the the x axis only: turn the expansion off
-    scale_x_continuous(expand = c(0, 0)) +
-    # Use this to stop ggplot clipping the top of the highest ridge
-    coord_cartesian(clip = "off") +
-    # Add the Commons Library theme: turn off the axes, use verical gridlines,
-    # and set the caption position
-    theme_commonslib(
-        axes = "",
-        grid = "v",
-        caption_position = "left")
+    data = df,
+    mapping = aes(x = median_age, y = classification)) +
+  # Add a density ridgeline geometry to create smoothed histograms;
+  # scale should be less than one to stop bins overlapping;
+  # set both fill and color to the same green
+  geom_density_ridges(
+    fill = commonslib_color("commons_green"),
+    color = commonslib_color("commons_green"),
+    size = 0.2,
+    scale = 0.8) +
+  # Set labels for the axes, colors and caption: DON'T set titles here
+  labs(
+    x = "Median age",
+    y = NULL,
+    caption = "Source: House of Commons Library") +
+  # Configure the the x axis only: turn the expansion off
+  scale_x_continuous(expand = c(0, 0)) +
+  # Use this to stop ggplot clipping the top of the highest ridge
+  coord_cartesian(clip = "off") +
+  # Add the Commons Library theme: turn off the axes, use verical gridlines,
+  # and set the caption position
+  theme_commonslib(
+    axes = "",
+    grid = "v",
+    caption_position = "left")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Median age was higher in less urban constituencues",
-    subtitle = "Distribution of constituencies by median age and settlement class, 2017")
+  plot,
+  title = "Median age was higher in less urban constituencues",
+  subtitle = "Distribution of constituencies by median age and settlement class, 2017")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "ridge-chart-smooth.png",
-    plot = plot,
-    width = 8,
-    height = 7)
+  "ridge-chart-smooth.png",
+  plot = plot,
+  width = 8,
+  height = 7)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "ridge-chart-smooth.svg",
-    plot = plot,
-    width = 8,
-    height = 7)
+  "ridge-chart-smooth.svg",
+  plot = plot,
+  width = 8,
+  height = 7)
 ```
 
 ### Binned Ridge Chart
@@ -951,12 +951,12 @@ df <- read_csv("ridge-chart-bins.csv")
 # Turn the classification column into a factor: setting the order of the levels
 # controls the order of the categories in the legend from top to bottom
 settlement_classes <- c(
-    "London",
-    "Other city",
-    "Large town",
-    "Medium town",
-    "Small town",
-    "Village")
+  "London",
+  "Other city",
+  "Large town",
+  "Medium town",
+  "Small town",
+  "Village")
 
 df$classification <- factor(df$classification, levels = settlement_classes)
 
@@ -964,56 +964,56 @@ df$classification <- factor(df$classification, levels = settlement_classes)
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = median_age, y = classification)) +
-    # Add a density ridgeline geometry to create histograms;
-    # set stat = "binline" to use binning, and bins = 10 to set number of bins
-    # scale should be less than one to stop bins overlapping
-    # set both fill and color to the same green
-    geom_density_ridges(
-        fill = commonslib_color("commons_green"),
-        color = commonslib_color("commons_green"),
-        size = 0.2,
-        scale = 0.8,
-        stat = "binline",
-        bins = 10) +
-    # Set labels for the axes, colors and caption: DON'T set titles here
-    labs(
-        x = "Median age",
-        y = NULL,
-        caption = "Source: House of Commons Library") +
-    # Configure the the x axis only: turn the expansion off
-    scale_x_continuous(expand = c(0, 0)) +
-    # Use this to stop ggplot clipping the top of the highest ridge
-    coord_cartesian(clip = "off") +
-    # Add the Commons Library theme: turn off the axes, use verical gridlines,
-    # and set the caption position
-    theme_commonslib(
-        axes = "",
-        grid = "v",
-        caption_position = "left")
+    data = df,
+    mapping = aes(x = median_age, y = classification)) +
+  # Add a density ridgeline geometry to create histograms;
+  # set stat = "binline" to use binning, and bins = 10 to set number of bins
+  # scale should be less than one to stop bins overlapping
+  # set both fill and color to the same green
+  geom_density_ridges(
+    fill = commonslib_color("commons_green"),
+    color = commonslib_color("commons_green"),
+    size = 0.2,
+    scale = 0.8,
+    stat = "binline",
+    bins = 10) +
+  # Set labels for the axes, colors and caption: DON'T set titles here
+  labs(
+    x = "Median age",
+    y = NULL,
+    caption = "Source: House of Commons Library") +
+  # Configure the the x axis only: turn the expansion off
+  scale_x_continuous(expand = c(0, 0)) +
+  # Use this to stop ggplot clipping the top of the highest ridge
+  coord_cartesian(clip = "off") +
+  # Add the Commons Library theme: turn off the axes, use verical gridlines,
+  # and set the caption position
+  theme_commonslib(
+    axes = "",
+    grid = "v",
+    caption_position = "left")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Median age was higher in less urban constituencues",
-    subtitle = "Distribution of constituencies by median age and settlement class, 2017")
+  plot,
+  title = "Median age was higher in less urban constituencues",
+  subtitle = "Distribution of constituencies by median age and settlement class, 2017")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "ridge-chart-bins.png",
-    plot = plot,
-    width = 8,
-    height = 7)
+  "ridge-chart-bins.png",
+  plot = plot,
+  width = 8,
+  height = 7)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "ridge-chart-bins.svg",
-    plot = plot,
-    width = 8,
-    height = 7)
+  "ridge-chart-bins.svg",
+  plot = plot,
+  width = 8,
+  height = 7)
 ```
 
 ### Dumbbell Chart
@@ -1049,72 +1049,72 @@ df$region <- reorder(df$region, df$old_age_2008)
 
 # Use ggplot to create a plot with data and mappings
 plot <- ggplot(
-        data = df,
-        mapping = aes(x = old_age_2008, xend = old_age_2018, y = region)) +
-     # Add a dumbell geometry to create the dumbells
-    geom_dumbbell(
-        colour = "#d0d0d0",
-        colour_x = commonslib_color("commons_green"),
-        colour_xend = commonslib_color("ocean_green"),
-        size = 1.5,
-        size_x = 2.5,
-        size_xend = 2.5) +
-    # Set labels for the axes, legend, and caption: DON'T set titles here
-    labs(
-        x = NULL,
-        y = NULL,
-        caption = "Source: ONS, Annual Population Estimates") +
-    # Configure the the x and y axes: we set the x axis breaks and limits, turn
-    # off expansion for the x axis, and format the percetages
-    scale_x_continuous(
-        limits = c(0.10, 0.24),
-        breaks = seq(0.10, 0.24, 0.02),
-        expand = c(0,0),
-        label = percent_format(accuracy = 1)) +
-    scale_y_discrete() +
-    # Use annotate_commonslib to add labels to the plot: this function does
-    # the same thing as annotate but it automatically sets the fonts to match
-    # the house style; position each annotation using values on the axis scales;
-    annotate_commonslib(
-        x = 0.18,
-        y = "South West",
-        label = "2008",
-        color = commonslib_color("commons_green"),
-        size = 4) +
-    annotate_commonslib(
-        x = 0.2284,
-        y = "South West",
-        label = "2018",
-        color = commonslib_color("ocean_green"),
-        size = 4) +
-    # Add the Commons Library theme: use just the bottom axis, turn off
-    # gridlines and legend, set the caption position to left
-    theme_commonslib(
-        axes = "b",
-        grid = "",
-        caption_position = "left")
+    data = df,
+    mapping = aes(x = old_age_2008, xend = old_age_2018, y = region)) +
+   # Add a dumbell geometry to create the dumbells
+  geom_dumbbell(
+    colour = "#d0d0d0",
+    colour_x = commonslib_color("commons_green"),
+    colour_xend = commonslib_color("ocean_green"),
+    size = 1.5,
+    size_x = 2.5,
+    size_xend = 2.5) +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL,
+    y = NULL,
+    caption = "Source: ONS, Annual Population Estimates") +
+  # Configure the the x and y axes: we set the x axis breaks and limits, turn
+  # off expansion for the x axis, and format the percetages
+  scale_x_continuous(
+    limits = c(0.10, 0.24),
+    breaks = seq(0.10, 0.24, 0.02),
+    expand = c(0,0),
+    label = percent_format(accuracy = 1)) +
+  scale_y_discrete() +
+  # Use annotate_commonslib to add labels to the plot: this function does
+  # the same thing as annotate but it automatically sets the fonts to match
+  # the house style; position each annotation using values on the axis scales;
+  annotate_commonslib(
+    x = 0.18,
+    y = "South West",
+    label = "2008",
+    color = commonslib_color("commons_green"),
+    size = 4) +
+  annotate_commonslib(
+    x = 0.2284,
+    y = "South West",
+    label = "2018",
+    color = commonslib_color("ocean_green"),
+    size = 4) +
+  # Add the Commons Library theme: use just the bottom axis, turn off
+  # gridlines and legend, set the caption position to left
+  theme_commonslib(
+    axes = "b",
+    grid = "",
+    caption_position = "left")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "The share of the population in older age groups has increased",
-    subtitle = "Percentage aged 65 and older by country and region in 2008 and 2018")
+  plot,
+  title = "The share of the population in older age groups has increased",
+  subtitle = "Percentage aged 65 and older by country and region in 2008 and 2018")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "dumbbell-chart.png",
-    plot = plot,
-    width = 7,
-    height = 7)
+  "dumbbell-chart.png",
+  plot = plot,
+  width = 7,
+  height = 7)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "dumbbell-chart.svg",
-    plot = plot,
-    width = 7,
-    height = 7)
+  "dumbbell-chart.svg",
+  plot = plot,
+  width = 7,
+  height = 7)
 ```
 
 ### Pyramid Chart
@@ -1145,8 +1145,8 @@ df <- read_csv("pyramid-chart.csv")
 # Create age range groups and cut age variable to groups
 age_breaks <- c(seq(from = -1, to = 90, by = 5), 90)
 age_labels <- c("0-4", "5-9", "10-14", "15-19", "20-24",
-    "25-29", "30-34", "35-39", "40-44", "45-49", "50-54",
-    "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90+")
+  "25-29", "30-34", "35-39", "40-44", "45-49", "50-54",
+  "55-59", "60-64", "65-69", "70-74", "75-79", "80-84", "85-89", "90+")
 df$age_group <- cut(df$age, breaks = age_breaks, labels = age_labels)
 
 # Multiply female by -1 so that columns will split left and right
@@ -1154,9 +1154,9 @@ df$female <- df$female * -1
 
 # Privot dataframe from wide to long and sum population for each age group
 df <- df %>% 
-    pivot_longer(-c(age, age_group), names_to = "sex", values_to = "count") %>% 
-    group_by(sex, age_group) %>% 
-    summarise(count = sum(count))
+  pivot_longer(-c(age, age_group), names_to = "sex", values_to = "count") %>% 
+  group_by(sex, age_group) %>% 
+  summarise(count = sum(count))
 
 # Divide count by one thound to get values in thousands
 df$count <- df$count / 1000
@@ -1167,74 +1167,74 @@ df$count <- df$count / 1000
 plot <- ggplot(
     data = df,
     mapping = aes(x = age_group, y = count, fill = sex)) +
-    # Add a col geometry for columns: use width = 0.8 to match house style;
-    # geom_col will plot the values for each category
-    geom_col(width = 0.8) +
-    # Configure the the x and y axes: we set the y axis breaks and limits, and
-    # we turn off the y-axis expansion
-    scale_x_discrete() +
-    scale_y_continuous(
-        limits = c(-2500, 2500),
-        breaks = seq(-2500, 2500, 500),
-        labels = comma(c(
-            seq(from = 2500, to = 500, by = -500), 
-            seq(from = 0, to = 2500, by = 500)),
-        expand = c(0,0))) +
-    # Use the coord_flip function to flip the axes: this will turn a vertical
-    # column chart into a horizontal bar chart
-    coord_flip() +
-    # Set labels for the axes, legend, and caption: DON'T set titles here
-    labs(
-        x = NULL,
-        y = NULL,
-        fill = NULL,
-        caption = "Source: ONS, Mid-year population 2016") +
-    # Use annotate_commonslib to add annotations to a plot: this function does
-    # the same thing as annotate but it automatically sets the fonts to match
-    # the house style; position each annotation using values on the axis scales
-    annotate_commonslib(
-        x = 19,
-        y = 1750,
-        label = "Male",
-        size = 3.5) +
-    annotate_commonslib(
-        x = 19,
-        y = -1750,
-        label = "Female",
-        size = 3.5) +
-    # Add the Commons Library theme: we don't specify settings for the axes and
-    # grid which means we are using the defaults; we set the legend and caption
-    # positions
-    theme_commonslib(
-        legend_position = "none",
-        caption_position = "right",
-        axes = "h",
-        grid = "v") +
-    scale_fill_manual(values = c(
-        commonslib_color("commons_green"),
-        commonslib_color("ocean_green")))
+  # Add a col geometry for columns: use width = 0.8 to match house style;
+  # geom_col will plot the values for each category
+  geom_col(width = 0.8) +
+  # Configure the the x and y axes: we set the y axis breaks and limits, and
+  # we turn off the y-axis expansion
+  scale_x_discrete() +
+  scale_y_continuous(
+    limits = c(-2500, 2500),
+    breaks = seq(-2500, 2500, 500),
+    labels = comma(c(
+      seq(from = 2500, to = 500, by = -500), 
+      seq(from = 0, to = 2500, by = 500)),
+    expand = c(0,0))) +
+  # Use the coord_flip function to flip the axes: this will turn a vertical
+  # column chart into a horizontal bar chart
+  coord_flip() +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = NULL,
+    caption = "Source: ONS, Mid-year population 2016") +
+  # Use annotate_commonslib to add annotations to a plot: this function does
+  # the same thing as annotate but it automatically sets the fonts to match
+  # the house style; position each annotation using values on the axis scales
+  annotate_commonslib(
+    x = 19,
+    y = 1750,
+    label = "Male",
+    size = 3.5) +
+  annotate_commonslib(
+    x = 19,
+    y = -1750,
+    label = "Female",
+    size = 3.5) +
+  # Add the Commons Library theme: we don't specify settings for the axes and
+  # grid which means we are using the defaults; we set the legend and caption
+  # positions
+  theme_commonslib(
+    legend_position = "none",
+    caption_position = "right",
+    axes = "h",
+    grid = "v") +
+  scale_fill_manual(values = c(
+    commonslib_color("commons_green"),
+    commonslib_color("ocean_green")))
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot, 
-    title = "Women outnumber men over the age of 80",
-    subtitle = "UK mid-year 2016 population by gender and age, Millions")
+  plot, 
+  title = "Women outnumber men over the age of 80",
+  subtitle = "UK mid-year 2016 population by gender and age, Millions")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "pyramid-chart.png",
-    plot = plot,
-    width = 8,
-    height = 8)
+  "pyramid-chart.png",
+  plot = plot,
+  width = 8,
+  height = 8)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "pyramid-chart.svg",
-    plot = plot,
-    width = 8,
-    height = 8)
+  "pyramid-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 8)
 ```
 
 ### Heatmap Chart
@@ -1262,7 +1262,7 @@ df <- read_csv("heatmap-chart.csv")
 
 # Pivot dataframe from wide to long
 df <- df %>% 
-    pivot_longer(-authority, names_to = "year", values_to = "control")
+  pivot_longer(-authority, names_to = "year", values_to = "control")
 
 # Create plot -----------------------------------------------------------------
 
@@ -1270,61 +1270,61 @@ df <- df %>%
 plot <- ggplot(
     data = df,
     mapping = aes(x = year, y = authority)) +
-    # Add a tile geometry for map: geom_tile will plot the values
-    # for each category, and colour "#dad5d1" to match plot background
-    geom_tile(
-        mapping = aes(fill = control),
-        colour = "#dad5d1") +
-    # Add a text geometry for labels: geom_text_commonslib uses the right fonts
-    geom_text_commonslib(
-        mapping = aes(label = control),
-        size = 2) +
-    # Set labels for the axes, legend, and caption: DON'T set titles here
-    labs(
-        x = NULL, 
-        y = NULL, 
-        caption = str_c("Source: Rallings and Thrasher, Local Elections in ",
-        "Britain; House of Commons Library")) +
-    # Configure the x and y axes: we set the x axis to be at the top of the
-    # chart and y axis limits so that authority names appear in alphabetical
-    # order top to bottom
-    scale_x_discrete(position = "top") +
-    scale_y_discrete(limits = rev(levels(as.factor(df$authority)))) +
-    # Use scale_fill_manual and commonslib_party_color to set category colors
-    scale_fill_manual(values = c(
-        "CON" = commonslib_party_color("conservative"),
-        "LAB" = commonslib_party_color("labour"),
-        "LD" = commonslib_party_color("lib_dem"),
-        "NOC" = commonslib_party_color("other"))) +
-    # Add the Commons Library theme: we don't specify settings for the grid
-    # which means we are using the defaults; we set the legend, caption
-    # positions, and axes
-    theme_commonslib(
-        legend_position = "none",
-        caption_position = "right",
-        axes = "")
+  # Add a tile geometry for map: geom_tile will plot the values
+  # for each category, and colour "#dad5d1" to match plot background
+  geom_tile(
+    mapping = aes(fill = control),
+    colour = "#dad5d1") +
+  # Add a text geometry for labels: geom_text_commonslib uses the right fonts
+  geom_text_commonslib(
+    mapping = aes(label = control),
+    size = 2) +
+  # Set labels for the axes, legend, and caption: DON'T set titles here
+  labs(
+    x = NULL, 
+    y = NULL, 
+    caption = str_c("Source: Rallings and Thrasher, Local Elections in ",
+    "Britain; House of Commons Library")) +
+  # Configure the x and y axes: we set the x axis to be at the top of the
+  # chart and y axis limits so that authority names appear in alphabetical
+  # order top to bottom
+  scale_x_discrete(position = "top") +
+  scale_y_discrete(limits = rev(levels(as.factor(df$authority)))) +
+  # Use scale_fill_manual and commonslib_party_color to set category colors
+  scale_fill_manual(values = c(
+    "CON" = commonslib_party_color("conservative"),
+    "LAB" = commonslib_party_color("labour"),
+    "LD" = commonslib_party_color("lib_dem"),
+    "NOC" = commonslib_party_color("other"))) +
+  # Add the Commons Library theme: we don't specify settings for the grid
+  # which means we are using the defaults; we set the legend, caption
+  # positions, and axes
+  theme_commonslib(
+    legend_position = "none",
+    caption_position = "right",
+    axes = "")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot, 
-    title = "Labour controlled the most London councils in 2018",
-    subtitle = "London council control immediately after local elections")
-    
+  plot, 
+  title = "Labour controlled the most London councils in 2018",
+  subtitle = "London council control immediately after local elections")
+  
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "heatmap-chart.png",
-    plot = plot,
-    width = 8,
-    height = 8)
+  "heatmap-chart.png",
+  plot = plot,
+  width = 8,
+  height = 8)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "heatmap-chart.svg",
-    plot = plot,
-    width = 8,
-    height = 8)
+  "heatmap-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 8)
 ```
 
 ### Treemap Chart
@@ -1358,66 +1358,66 @@ df$value <- df$value / 1000000
 plot <- ggplot(
     data = df,
     mapping = aes(
-        area = value,
-        fill = region,
-        subgroup = region,
-        label = country)) +
-    # Add a treemap tile geometry: geom_treemap will generate tile area by
-    # value for each observation, specify seperating lines to be the same
-    # colour as plot background and line thickness
-    geom_treemap(
-        colour = "#dad5d1",
-        size = 0.1) +
-    # Add treemap text geometry for labels: set font family as "Open Sans" and
-    # text color as white ("#ffffff") - geom_text_commonslib DOESN'T work here
-    geom_treemap_text(
-        color = "#ffffff",
-        family = "Open Sans") +
-    geom_treemap_subgroup_text(
-        color = "#ffffff",
-        family = "Open Sans",
-        fontface = "bold",
-        alpha = 0.5) +
-    # Set labels for the caption: DON'T set titles here
-    labs(
-        caption = "Source: World Bank, Military Expenditure") +
-    # Use scale_fill_manual and commonslib_color to set region colors
-    scale_fill_manual(values = c(
-        "North America" = commonslib_color("commons_green"),
-        "Europe & Central Asia" =    commonslib_color("tangerine"),
-        "East Asia & Pacific" = commonslib_color("grape"),
-        "Middle East & North Africa" = commonslib_color("cerulean_blue"),
-        "South Asia" = commonslib_color("ocean_green"),
-        "Latin America & Caribbean" = commonslib_color("lilac"),
-        "Sub-Saharan Africa" = commonslib_color("pacific_blue"))) +
-    # Add the Commons Library theme: we set the legend, caption positions,
-    # and axes
-    theme_commonslib(
-        axes = "",
-        caption_position = "right",
-        legend_position = "none")
+      area = value,
+      fill = region,
+      subgroup = region,
+      label = country)) +
+  # Add a treemap tile geometry: geom_treemap will generate tile area by
+  # value for each observation, specify seperating lines to be the same
+  # colour as plot background and line thickness
+  geom_treemap(
+    colour = "#dad5d1",
+    size = 0.1) +
+  # Add treemap text geometry for labels: set font family as "Open Sans" and
+  # text color as white ("#ffffff") - geom_text_commonslib DOESN'T work here
+  geom_treemap_text(
+    color = "#ffffff",
+    family = "Open Sans") +
+  geom_treemap_subgroup_text(
+    color = "#ffffff",
+    family = "Open Sans",
+    fontface = "bold",
+    alpha = 0.5) +
+  # Set labels for the caption: DON'T set titles here
+  labs(
+    caption = "Source: World Bank, Military Expenditure") +
+  # Use scale_fill_manual and commonslib_color to set region colors
+  scale_fill_manual(values = c(
+    "North America" = commonslib_color("commons_green"),
+    "Europe & Central Asia" =  commonslib_color("tangerine"),
+    "East Asia & Pacific" = commonslib_color("grape"),
+    "Middle East & North Africa" = commonslib_color("cerulean_blue"),
+    "South Asia" = commonslib_color("ocean_green"),
+    "Latin America & Caribbean" = commonslib_color("lilac"),
+    "Sub-Saharan Africa" = commonslib_color("pacific_blue"))) +
+  # Add the Commons Library theme: we set the legend, caption positions,
+  # and axes
+  theme_commonslib(
+    axes = "",
+    caption_position = "right",
+    legend_position = "none")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot, 
-    title = "The United States has the largest military expenditure in the world",
-    subtitle = "Military expenditure by region and country in 2018")
-    
+  plot, 
+  title = "The United States has the largest military expenditure in the world",
+  subtitle = "Military expenditure by region and country in 2018")
+  
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "treemap-chart.png",
-    plot = plot,
-    width = 8,
-    height = 8)
+  "treemap-chart.png",
+  plot = plot,
+  width = 8,
+  height = 8)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "treemap-chart.svg",
-    plot = plot,
-    width = 8,
-    height = 8)
+  "treemap-chart.svg",
+  plot = plot,
+  width = 8,
+  height = 8)
  ```
 
 ---

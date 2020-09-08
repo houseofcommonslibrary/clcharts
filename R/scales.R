@@ -7,10 +7,10 @@
 
 get_commonslib_colors <- function(...) {
 
-    colors <- c(...)
-    if (is.null(colors))
-        return (commonslib_colors)
-    commonslib_colors[colors]
+  colors <- c(...)
+  if (is.null(colors))
+    return (commonslib_colors)
+  commonslib_colors[colors]
 }
 
 #' Return a function which interpolates a commonslib color palette
@@ -21,40 +21,40 @@ get_commonslib_colors <- function(...) {
 #' @keywords internal
 
 get_commonslib_palette <- function(
-    palette = "main",
-    reverse = FALSE, ...) {
+  palette = "main",
+  reverse = FALSE, ...) {
 
-    commonslib_palettes <- list(
-        main = get_commonslib_colors(
-            "commons_green",
-            "ocean_green",
-            "pine_green",
-            "grape",
-            "lilac",
-            "tangerine"),
-        all = get_commonslib_colors(
-            "commons_green",
-            "ocean_green",
-            "pine_green",
-            "grape",
-            "lilac",
-            "tangerine",
-            "cerulean_blue",
-            "pacific_blue",
-            "cherry",
-            "burnt_orange"),
-        green = get_commonslib_colors(
-            "commons_green",
-            "ocean_green",
-            "pine_green"),
-        greenpurple = get_commonslib_colors(
-            "green_2",
-            "green_3")
-    )
+  commonslib_palettes <- list(
+    main = get_commonslib_colors(
+      "commons_green",
+      "ocean_green",
+      "pine_green",
+      "grape",
+      "lilac",
+      "tangerine"),
+    all = get_commonslib_colors(
+      "commons_green",
+      "ocean_green",
+      "pine_green",
+      "grape",
+      "lilac",
+      "tangerine",
+      "cerulean_blue",
+      "pacific_blue",
+      "cherry",
+      "burnt_orange"),
+    green = get_commonslib_colors(
+      "commons_green",
+      "ocean_green",
+      "pine_green"),
+    greenpurple = get_commonslib_colors(
+      "green_2",
+      "green_3")
+  )
 
-    p <- commonslib_palettes[[palette]]
-    if (reverse) p <- rev(p)
-    grDevices::colorRampPalette(p, ...)
+  p <- commonslib_palettes[[palette]]
+  if (reverse) p <- rev(p)
+  grDevices::colorRampPalette(p, ...)
 }
 
 #' Color scale for commonslib colors
@@ -67,18 +67,18 @@ get_commonslib_palette <- function(
 #' @export
 
 scale_color_commonslib <- function(
-    palette = "main",
-    discrete = TRUE,
-    reverse = FALSE, ...) {
+  palette = "main",
+  discrete = TRUE,
+  reverse = FALSE, ...) {
 
-    p <- get_commonslib_palette(palette = palette, reverse = reverse)
+  p <- get_commonslib_palette(palette = palette, reverse = reverse)
 
-    if (discrete) {
-        ggplot2::discrete_scale(
-            "color", paste0("commonslib_", palette), palette = p, ...)
-    } else {
-        ggplot2::scale_color_gradientn(colors = p(256), ...)
-    }
+  if (discrete) {
+    ggplot2::discrete_scale(
+      "color", paste0("commonslib_", palette), palette = p, ...)
+  } else {
+    ggplot2::scale_color_gradientn(colors = p(256), ...)
+  }
 }
 
 #' Fill scale for commonslib colors
@@ -91,16 +91,16 @@ scale_color_commonslib <- function(
 #' @export
 
 scale_fill_commonslib <- function(
-    palette = "main",
-    discrete = TRUE,
-    reverse = FALSE, ...) {
+  palette = "main",
+  discrete = TRUE,
+  reverse = FALSE, ...) {
 
-    p <- get_commonslib_palette(palette = palette, reverse = reverse)
+  p <- get_commonslib_palette(palette = palette, reverse = reverse)
 
-    if (discrete) {
-        ggplot2::discrete_scale(
-            "fill", paste0("commonslib_", palette), palette = p, ...)
-    } else {
-        ggplot2::scale_fill_gradientn(colors = p(256), ...)
-    }
+  if (discrete) {
+    ggplot2::discrete_scale(
+      "fill", paste0("commonslib_", palette), palette = p, ...)
+  } else {
+    ggplot2::scale_fill_gradientn(colors = p(256), ...)
+  }
 }

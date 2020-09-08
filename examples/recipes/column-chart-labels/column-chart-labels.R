@@ -34,52 +34,52 @@ df$region <- fct_rev(reorder(df$region, df$region, length))
 
 # Use ggplot to create a plot with data
 plot <- ggplot(data = df) +
-    # Add a bar geometry for columns: use width = 0.8 to match house style;
-    # geom_bar will plot the number of items in each category;
-    # we set the fill color in geom_bar as color does not represent data
-    geom_bar(
-        mapping = aes(x = region),
-        width = 0.8,
-        fill = commonslib_color("commons_green")) +
-    # Add a text geometry for labels: geom_text_commonslib uses the right fonts
-    geom_text_commonslib(
-        mapping = aes(x = region, label = ..count..),
-        stat = "count",
-        vjust = "top",
-        nudge_y = -3) +
-    # Set labels for the axes and caption: DON'T set titles here
-    labs(
-        x = "Country or region",
-        y = "Number of constituencies",
-        caption = "Source: House of Commons Library") +
-    # Configure the the x and y axes: we remove the expansion for the y axis
-    scale_x_discrete() +
-    scale_y_continuous(expand = c(0,0)) +
-    # Add the Commons Library theme: we set a bottom axis, horizontal
-    # gridlines, and set the caption on the left
-    theme_commonslib(
-        axes = "b",
-        grid = "h",
-        caption_position = "left")
+  # Add a bar geometry for columns: use width = 0.8 to match house style;
+  # geom_bar will plot the number of items in each category;
+  # we set the fill color in geom_bar as color does not represent data
+  geom_bar(
+    mapping = aes(x = region),
+    width = 0.8,
+    fill = commonslib_color("commons_green")) +
+  # Add a text geometry for labels: geom_text_commonslib uses the right fonts
+  geom_text_commonslib(
+    mapping = aes(x = region, label = ..count..),
+    stat = "count",
+    vjust = "top",
+    nudge_y = -3) +
+  # Set labels for the axes and caption: DON'T set titles here
+  labs(
+    x = "Country or region",
+    y = "Number of constituencies",
+    caption = "Source: House of Commons Library") +
+  # Configure the the x and y axes: we remove the expansion for the y axis
+  scale_x_discrete() +
+  scale_y_continuous(expand = c(0,0)) +
+  # Add the Commons Library theme: we set a bottom axis, horizontal
+  # gridlines, and set the caption on the left
+  theme_commonslib(
+    axes = "b",
+    grid = "h",
+    caption_position = "left")
 
 # After creating the plot, add a title and subtitle with add_commonslib_titles
 plot <- add_commonslib_titles(
-    plot,
-    title = "Countries and regions vary in representation",
-    subtitle = "Constituencies by country or region, United Kingdom")
+  plot,
+  title = "Countries and regions vary in representation",
+  subtitle = "Constituencies by country or region, United Kingdom")
 
 # Save the plot in different formats ------------------------------------------
 
 # Save a high resolution export of the plot as a png
 save_png(
-    "column-chart-labels.png",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "column-chart-labels.png",
+  plot = plot,
+  width = 8,
+  height = 5)
 
 # Save an editable verson of the plot as an svg
 save_svg(
-    "column-chart-labels.svg",
-    plot = plot,
-    width = 8,
-    height = 5)
+  "column-chart-labels.svg",
+  plot = plot,
+  width = 8,
+  height = 5)

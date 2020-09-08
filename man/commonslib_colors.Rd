@@ -4,7 +4,9 @@
 \name{commonslib_colors}
 \alias{commonslib_colors}
 \title{Palette colors as a named vector}
-\format{An object of class \code{character} of length 10.}
+\format{
+An object of class \code{character} of length 10.
+}
 \usage{
 commonslib_colors
 }

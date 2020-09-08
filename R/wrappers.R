@@ -18,16 +18,16 @@
 #' @export
 
 geom_text_commonslib <- function(
-    color = "#ffffff",
-    family = "Open Sans",
-    fontface = "bold",
-    ...) {
+  color = "#ffffff",
+  family = "Open Sans",
+  fontface = "bold",
+  ...) {
 
-    ggplot2::geom_text(
-        color = color,
-        family = family,
-        fontface = fontface,
-        ...)
+  ggplot2::geom_text(
+    color = color,
+    family = family,
+    fontface = fontface,
+    ...)
 }
 
 # Annotate --------------------------------------------------------------------
@@ -49,17 +49,17 @@ geom_text_commonslib <- function(
 #' @export
 #'
 annotate_commonslib <- function(
-    color = "#404040",
-    family = "Open Sans",
-    fontface = "plain",
-    size = 5,
-    ...) {
+  color = "#404040",
+  family = "Open Sans",
+  fontface = "plain",
+  size = 5,
+  ...) {
 
-    ggplot2::annotate(
-        "text",
-        family = family,
-        fontface = fontface,
-        color = color,
-        size = size,
-        ...)
+  ggplot2::annotate(
+    "text",
+    family = family,
+    fontface = fontface,
+    color = color,
+    size = size,
+    ...)
 }

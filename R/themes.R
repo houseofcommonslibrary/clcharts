@@ -110,275 +110,275 @@
 #' @export
 
 theme_commonslib <- function (
-    axes = "bl",
-    grid = "",
-    legend_position = "right",
-    caption_position = "right",
-    title_family = "National-LFSN Semibd",
-    subtitle_family = "National-LFSN Book",
-    axis_title_family = "Open Sans",
-    axis_text_family = "Open Sans",
-    legend_title_family = "Open Sans",
-    legend_text_family = "Open Sans",
-    facet_title_family = "Open Sans",
-    caption_family = "National-LFSN Book",
-    title_size = 18,
-    subtitle_size = 14,
-    axis_title_size = 11,
-    axis_text_size = 10,
-    legend_title_size = 10,
-    legend_text_size = 10,
-    facet_title_size = 10,
-    caption_size = 12,
-    title_color = "#006548",
-    subtitle_color = "#006548",
-    axis_title_color = "#404040",
-    axis_text_color = "#404040",
-    legend_title_color = "#404040",
-    legend_text_color = "#404040",
-    facet_title_color = "#404040",
-    caption_color = "#404040",
-    background_color = "#f0eeed",
-    axis_line_color = "#a6a6a6",
-    grid_color = "#dad5d1") {
+  axes = "bl",
+  grid = "",
+  legend_position = "right",
+  caption_position = "right",
+  title_family = "National-LFSN Semibd",
+  subtitle_family = "National-LFSN Book",
+  axis_title_family = "Open Sans",
+  axis_text_family = "Open Sans",
+  legend_title_family = "Open Sans",
+  legend_text_family = "Open Sans",
+  facet_title_family = "Open Sans",
+  caption_family = "National-LFSN Book",
+  title_size = 18,
+  subtitle_size = 14,
+  axis_title_size = 11,
+  axis_text_size = 10,
+  legend_title_size = 10,
+  legend_text_size = 10,
+  facet_title_size = 10,
+  caption_size = 12,
+  title_color = "#006548",
+  subtitle_color = "#006548",
+  axis_title_color = "#404040",
+  axis_text_color = "#404040",
+  legend_title_color = "#404040",
+  legend_text_color = "#404040",
+  facet_title_color = "#404040",
+  caption_color = "#404040",
+  background_color = "#f0eeed",
+  axis_line_color = "#a6a6a6",
+  grid_color = "#dad5d1") {
 
-    # Set the caption horizontal justification
-    if (stringr::str_detect(caption_position, "left")) {
-        caption_hjust = 0
-    } else if (stringr::str_detect(caption_position, "right")) {
-        caption_hjust = 1
-    } else {
-        stop("The caption_position should be \"left\" or \"right\"")
-    }
+  # Set the caption horizontal justification
+  if (stringr::str_detect(caption_position, "left")) {
+    caption_hjust = 0
+  } else if (stringr::str_detect(caption_position, "right")) {
+    caption_hjust = 1
+  } else {
+    stop("The caption_position should be \"left\" or \"right\"")
+  }
 
-    # Baseline theme
-    theme_commonslib <- ggplot2::theme(
-            plot.background = ggplot2::element_rect(
-                fill = background_color,
-                size = 0),
-            plot.margin = ggplot2::margin(
-                t = 18,
-                r = 18,
-                b = 18,
-                l = 18, unit = "pt"),
-            plot.title = ggplot2::element_text(
-                family = title_family,
-                color = title_color,
-                face = "plain",
-                hjust = 0,
-                size = title_size,
-                margin = ggplot2::margin(
-                    t = 0,
-                    r = 0,
-                    b = 7,
-                    l = 0, unit = "pt")),
-            plot.subtitle = ggplot2::element_text(
-                family = subtitle_family,
-                color = subtitle_color,
-                face = "plain",
-                hjust = 0,
-                size = subtitle_size,
-                margin = ggplot2::margin(
-                    t = 0,
-                    r = 0,
-                    b = 18,
-                    l = 0, unit = "pt")),
-            plot.caption = ggplot2::element_text(
-                family = caption_family,
-                color = caption_color,
-                hjust = caption_hjust,
-                size = caption_size,
-                margin = ggplot2::margin(
-                    t = 18,
-                    r = 0,
-                    b = 0,
-                    l = 0, unit = "pt")),
-            plot.caption.position = "plot",
-            panel.spacing = ggplot2::unit(20, "pt"),
-            panel.border = ggplot2::element_blank(),
-            panel.background = ggplot2::element_blank(),
-            panel.grid = ggplot2::element_blank(),
-            panel.grid.major = ggplot2::element_blank(),
-            panel.grid.minor = ggplot2::element_blank(),
-            axis.line = ggplot2::element_blank(),
-            axis.line.x.top = ggplot2::element_blank(),
-            axis.line.y.right = ggplot2::element_blank(),
-            axis.line.x.bottom = ggplot2::element_blank(),
-            axis.line.y.left = ggplot2::element_blank(),
-            axis.ticks = ggplot2::element_blank(),
-            axis.title = ggplot2::element_text(
-                family = axis_title_family,
-                color = axis_title_color,
-                size = axis_title_size),
-            axis.title.x = ggplot2::element_text(
-                margin = ggplot2::margin(
-                    t = 12,
-                    r = 0,
-                    b = 0,
-                    l = 0, unit = "pt")),
-            axis.title.x.top = ggplot2::element_text(
-                margin = ggplot2::margin(
-                    t = 0,
-                    b = 12, unit = "pt")),
-            axis.title.y = ggplot2::element_text(
-                angle = 90,
-                margin = ggplot2::margin(
-                    t = 0,
-                    r = 12,
-                    b = 0,
-                    l = 0, unit = "pt")),
-            axis.title.y.right = ggplot2::element_text(
-                angle = 90,
-                margin = ggplot2::margin(
-                    r = 0,
-                    l = 12, unit = "pt")),
-            axis.text = ggplot2::element_text(
-                family = axis_text_family,
-                color = axis_text_color,
-                size = axis_text_size),
-            axis.text.x = ggplot2::element_text(
-                margin = ggplot2::margin(
-                    t = 7,
-                    r = 0,
-                    b = 0,
-                    l = 0, unit = "pt")),
-            axis.text.x.top = ggplot2::element_text(
-                margin = ggplot2::margin(
-                    t = 0,
-                    b = 7, unit = "pt")),
-            axis.text.y = ggplot2::element_text(
-                hjust = 1,
-                margin = ggplot2::margin(
-                    t = 0,
-                    r = 7,
-                    b = 0,
-                    l = 0, unit = "pt")),
-            axis.text.y.right = ggplot2::element_text(
-                hjust = 0,
-                margin = ggplot2::margin(
-                    r = 0,
-                    l = 7, unit = "pt")),
-            legend.background = ggplot2::element_rect(
-                color = NULL,
-                fill = background_color,
-                size = 0),
-            legend.key = ggplot2::element_rect(
-                color = background_color,
-                fill = background_color),
-            legend.title = ggplot2::element_text(
-                family = legend_title_family,
-                color = legend_title_color,
-                face = "bold",
-                size = legend_title_size),
-            legend.text = ggplot2::element_text(
-                family = legend_text_family,
-                color = legend_text_color,
-                size = legend_text_size),
-            strip.background = ggplot2::element_rect(
-                color = background_color,
-                fill = background_color),
-            strip.text = ggplot2::element_text(
-                family = facet_title_family,
-                color = facet_title_color,
-                size = facet_title_size,
-                face = "bold"))
+  # Baseline theme
+  theme_commonslib <- ggplot2::theme(
+      plot.background = ggplot2::element_rect(
+        fill = background_color,
+        size = 0),
+      plot.margin = ggplot2::margin(
+        t = 18,
+        r = 18,
+        b = 18,
+        l = 18, unit = "pt"),
+      plot.title = ggplot2::element_text(
+        family = title_family,
+        color = title_color,
+        face = "plain",
+        hjust = 0,
+        size = title_size,
+        margin = ggplot2::margin(
+          t = 0,
+          r = 0,
+          b = 7,
+          l = 0, unit = "pt")),
+      plot.subtitle = ggplot2::element_text(
+        family = subtitle_family,
+        color = subtitle_color,
+        face = "plain",
+        hjust = 0,
+        size = subtitle_size,
+        margin = ggplot2::margin(
+          t = 0,
+          r = 0,
+          b = 18,
+          l = 0, unit = "pt")),
+      plot.caption = ggplot2::element_text(
+        family = caption_family,
+        color = caption_color,
+        hjust = caption_hjust,
+        size = caption_size,
+        margin = ggplot2::margin(
+          t = 18,
+          r = 0,
+          b = 0,
+          l = 0, unit = "pt")),
+      plot.caption.position = "plot",
+      panel.spacing = ggplot2::unit(20, "pt"),
+      panel.border = ggplot2::element_blank(),
+      panel.background = ggplot2::element_blank(),
+      panel.grid = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank(),
+      axis.line = ggplot2::element_blank(),
+      axis.line.x.top = ggplot2::element_blank(),
+      axis.line.y.right = ggplot2::element_blank(),
+      axis.line.x.bottom = ggplot2::element_blank(),
+      axis.line.y.left = ggplot2::element_blank(),
+      axis.ticks = ggplot2::element_blank(),
+      axis.title = ggplot2::element_text(
+        family = axis_title_family,
+        color = axis_title_color,
+        size = axis_title_size),
+      axis.title.x = ggplot2::element_text(
+        margin = ggplot2::margin(
+          t = 12,
+          r = 0,
+          b = 0,
+          l = 0, unit = "pt")),
+      axis.title.x.top = ggplot2::element_text(
+        margin = ggplot2::margin(
+          t = 0,
+          b = 12, unit = "pt")),
+      axis.title.y = ggplot2::element_text(
+        angle = 90,
+        margin = ggplot2::margin(
+          t = 0,
+          r = 12,
+          b = 0,
+          l = 0, unit = "pt")),
+      axis.title.y.right = ggplot2::element_text(
+        angle = 90,
+        margin = ggplot2::margin(
+          r = 0,
+          l = 12, unit = "pt")),
+      axis.text = ggplot2::element_text(
+        family = axis_text_family,
+        color = axis_text_color,
+        size = axis_text_size),
+      axis.text.x = ggplot2::element_text(
+        margin = ggplot2::margin(
+          t = 7,
+          r = 0,
+          b = 0,
+          l = 0, unit = "pt")),
+      axis.text.x.top = ggplot2::element_text(
+        margin = ggplot2::margin(
+          t = 0,
+          b = 7, unit = "pt")),
+      axis.text.y = ggplot2::element_text(
+        hjust = 1,
+        margin = ggplot2::margin(
+          t = 0,
+          r = 7,
+          b = 0,
+          l = 0, unit = "pt")),
+      axis.text.y.right = ggplot2::element_text(
+        hjust = 0,
+        margin = ggplot2::margin(
+          r = 0,
+          l = 7, unit = "pt")),
+      legend.background = ggplot2::element_rect(
+        color = NULL,
+        fill = background_color,
+        size = 0),
+      legend.key = ggplot2::element_rect(
+        color = background_color,
+        fill = background_color),
+      legend.title = ggplot2::element_text(
+        family = legend_title_family,
+        color = legend_title_color,
+        face = "bold",
+        size = legend_title_size),
+      legend.text = ggplot2::element_text(
+        family = legend_text_family,
+        color = legend_text_color,
+        size = legend_text_size),
+      strip.background = ggplot2::element_rect(
+        color = background_color,
+        fill = background_color),
+      strip.text = ggplot2::element_text(
+        family = facet_title_family,
+        color = facet_title_color,
+        size = facet_title_size,
+        face = "bold"))
 
-    # Axes
-    axis_line <- ggplot2::element_line(
-        color = axis_line_color,
-        size = 0.3,
-        linetype = "solid")
+  # Axes
+  axis_line <- ggplot2::element_line(
+    color = axis_line_color,
+    size = 0.3,
+    linetype = "solid")
 
-    if (stringr::str_detect(axes, "t")) {
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                axis.line.x.top = axis_line,
-                axis.ticks.x.top = axis_line)
-    }
+  if (stringr::str_detect(axes, "t")) {
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        axis.line.x.top = axis_line,
+        axis.ticks.x.top = axis_line)
+  }
 
-    if (stringr::str_detect(axes, "r")) {
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                axis.line.y.right = axis_line,
-                axis.ticks.y.right = axis_line)
-    }
+  if (stringr::str_detect(axes, "r")) {
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        axis.line.y.right = axis_line,
+        axis.ticks.y.right = axis_line)
+  }
 
-    if (stringr::str_detect(axes, "b")) {
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                axis.line.x.bottom = axis_line,
-                axis.ticks.x.bottom = axis_line)
-    }
+  if (stringr::str_detect(axes, "b")) {
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        axis.line.x.bottom = axis_line,
+        axis.ticks.x.bottom = axis_line)
+  }
 
-    if (stringr::str_detect(axes, "l")) {
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                axis.line.y.left = axis_line,
-                axis.ticks.y.left = axis_line)
-    }
+  if (stringr::str_detect(axes, "l")) {
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        axis.line.y.left = axis_line,
+        axis.ticks.y.left = axis_line)
+  }
 
-    # Gridlines
-    grid_line <- ggplot2::element_line(
-        color = grid_color,
-        size = 0.35,
-        linetype = "solid")
+  # Gridlines
+  grid_line <- ggplot2::element_line(
+    color = grid_color,
+    size = 0.35,
+    linetype = "solid")
 
-    if (stringr::str_detect(grid, "v")) {
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(panel.grid.major.x = grid_line)
-    }
+  if (stringr::str_detect(grid, "v")) {
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(panel.grid.major.x = grid_line)
+  }
 
-    if (stringr::str_detect(grid, "h")) {
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(panel.grid.major.y = grid_line)
-    }
+  if (stringr::str_detect(grid, "h")) {
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(panel.grid.major.y = grid_line)
+  }
 
-    # Legend
-    if (legend_position %in% c("top", "right", "bottom", "left", "none")) {
+  # Legend
+  if (legend_position %in% c("top", "right", "bottom", "left", "none")) {
 
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(legend.position = legend_position)
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(legend.position = legend_position)
 
-    } else if (legend_position == "top-right") {
+  } else if (legend_position == "top-right") {
 
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                legend.position = "top",
-                legend.direction = "horizontal",
-                legend.justification = c(1,0))
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        legend.position = "top",
+        legend.direction = "horizontal",
+        legend.justification = c(1,0))
 
-    } else if (legend_position == "top-left") {
+  } else if (legend_position == "top-left") {
 
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                legend.position = "top",
-                legend.direction = "horizontal",
-                legend.justification = c(0,1))
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        legend.position = "top",
+        legend.direction = "horizontal",
+        legend.justification = c(0,1))
 
-    } else if (legend_position == "bottom-right") {
+  } else if (legend_position == "bottom-right") {
 
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                legend.position = "bottom",
-                legend.direction = "horizontal",
-                legend.justification = c(1,0))
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        legend.justification = c(1,0))
 
-    } else if (legend_position == "bottom-left") {
+  } else if (legend_position == "bottom-left") {
 
-        theme_commonslib <- theme_commonslib %+replace%
-            ggplot2::theme(
-                legend.position = "bottom",
-                legend.direction = "horizontal",
-                legend.justification = c(0,1))
+    theme_commonslib <- theme_commonslib %+replace%
+      ggplot2::theme(
+        legend.position = "bottom",
+        legend.direction = "horizontal",
+        legend.justification = c(0,1))
 
-    } else {
-        stop(paste(
-            "The legend_position should be one of:",
-            "\"top\", \"right\", \"bottom\", \"left\",",
-            "\"top-right\", \"top-left\", \"bottom-right\", \"bottom-left\""))
-    }
+  } else {
+    stop(paste(
+      "The legend_position should be one of:",
+      "\"top\", \"right\", \"bottom\", \"left\",",
+      "\"top-right\", \"top-left\", \"bottom-right\", \"bottom-left\""))
+  }
 
-    theme_commonslib
+  theme_commonslib
 }
 
 # Function to add correctly aligned titles ------------------------------------
@@ -425,42 +425,42 @@ theme_commonslib <- function (
 #' @export
 
 add_commonslib_titles <- function(
-    plot,
-    title = NULL,
-    subtitle = NULL,
-    title_family = "National-LFSN Semibd",
-    subtitle_family = "National-LFSN Book",
-    title_size = 18,
-    subtitle_size = 14,
-    title_color = "#006548",
-    subtitle_color = "#006548",
-    background_color = "#f0eeed") {
+  plot,
+  title = NULL,
+  subtitle = NULL,
+  title_family = "National-LFSN Semibd",
+  subtitle_family = "National-LFSN Book",
+  title_size = 18,
+  subtitle_size = 14,
+  title_color = "#006548",
+  subtitle_color = "#006548",
+  background_color = "#f0eeed") {
 
-    # If no titles are provided, return the plot unmodified
-    if (is.null(title) && is.null(subtitle)) return(plot)
+  # If no titles are provided, return the plot unmodified
+  if (is.null(title) && is.null(subtitle)) return(plot)
 
-    # Set the default title theme to the main theme plus any specified fonts
-    theme_titles <- theme_commonslib() + ggplot2::theme(
-             plot.title = ggplot2::element_text(family = title_family),
-             plot.subtitle = ggplot2::element_text(family = subtitle_family))
+  # Set the default title theme to the main theme plus any specified fonts
+  theme_titles <- theme_commonslib() + ggplot2::theme(
+       plot.title = ggplot2::element_text(family = title_family),
+       plot.subtitle = ggplot2::element_text(family = subtitle_family))
 
-    # If no subtitle is provided, adjust the title's bottom padding
-    if (is.null(subtitle)) {
-        theme_titles <- theme_titles + ggplot2::theme(
-             plot.title = ggplot2::element_text(
-                family = title_family,
-                margin = ggplot2::margin(b = 18, unit = "pt")))
-    }
+  # If no subtitle is provided, adjust the title's bottom padding
+  if (is.null(subtitle)) {
+    theme_titles <- theme_titles + ggplot2::theme(
+       plot.title = ggplot2::element_text(
+        family = title_family,
+        margin = ggplot2::margin(b = 18, unit = "pt")))
+  }
 
-    # Remove margin padding from the plot before re-adding with the titles
-    plot +
-        ggplot2::theme(plot.margin = ggplot2::margin(
-                t = 0,
-                r = 0,
-                b = 0,
-                l = 0, unit = "pt")) +
-        patchwork::plot_annotation(
-            title = title,
-            subtitle = subtitle,
-            theme = theme_titles)
+  # Remove margin padding from the plot before re-adding with the titles
+  plot +
+    ggplot2::theme(plot.margin = ggplot2::margin(
+        t = 0,
+        r = 0,
+        b = 0,
+        l = 0, unit = "pt")) +
+    patchwork::plot_annotation(
+      title = title,
+      subtitle = subtitle,
+      theme = theme_titles)
 }

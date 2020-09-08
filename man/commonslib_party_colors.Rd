@@ -4,7 +4,9 @@
 \name{commonslib_party_colors}
 \alias{commonslib_party_colors}
 \title{Party colors as a named vector}
-\format{An object of class \code{character} of length 16.}
+\format{
+An object of class \code{character} of length 16.
+}
 \usage{
 commonslib_party_colors
 }

@@ -1,4 +1,4 @@
-### Theme specific versions of ggplot2 functions setting default styles
+# Theme specific versions of ggplot2 functions setting default styles
 
 # Geoms -----------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-### Scales
+# Scales
 
 #' Function to extract commonslib colors as hex codes
 #'

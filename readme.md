@@ -37,7 +37,7 @@ Install from GitHub using remotes. The package will install necessary dependenci
 
 ``` r
 install.packages("remotes")
-remotes::install_github("olihawkins/clcharts")
+remotes::install_github("houseofcommonslibrary/clcharts")
 ```
 
 ### Importing

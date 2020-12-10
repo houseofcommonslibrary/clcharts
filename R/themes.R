@@ -439,10 +439,18 @@ add_commonslib_titles <- function(
     # If no titles are provided, return the plot unmodified
     if (is.null(title) && is.null(subtitle)) return(plot)
 
-    # Set the default title theme to the main theme plus any specified fonts
+    # Set the default title theme to the main theme plus any specified changes
     theme_titles <- theme_commonslib() + ggplot2::theme(
-             plot.title = ggplot2::element_text(family = title_family),
-             plot.subtitle = ggplot2::element_text(family = subtitle_family))
+            plot.background = ggplot2::element_rect(
+                fill = background_color),
+            plot.title = ggplot2::element_text(
+                family = title_family,
+                size = title_size,
+                color = title_color),
+            plot.subtitle = ggplot2::element_text(
+                family = subtitle_family,
+                size = subtitle_size,
+                color = subtitle_color))
 
     # If no subtitle is provided, adjust the title's bottom padding
     if (is.null(subtitle)) {

@@ -48,8 +48,8 @@ get_commonslib_palette <- function(
             "ocean_green",
             "pine_green"),
         greenpurple = get_commonslib_colors(
-            "green_2",
-            "green_3")
+            "pine_green",
+            "grape")
     )
 
     p <- commonslib_palettes[[palette]]

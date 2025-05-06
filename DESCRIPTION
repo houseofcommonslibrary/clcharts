@@ -2,7 +2,7 @@ Package: clcharts
 Type: Package
 Title: Themes, Colors and Tools for Making Charts in the House of Commons 
     Library style
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(
         given = "Oliver",

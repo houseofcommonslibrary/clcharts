@@ -11,7 +11,7 @@ The documentation that follows is divided into four broad sections:
 
 Some of the material shown in Sections 2 and 3 will be familiar to experienced R users. It is included to help newer R users who are still learning how to work with ggplot. These sections do not provide a complete introduction to working with ggplot, but they will help you understand how to use the `clcharts` package in practice, and show you how to make some of the most frequently used charts in the House of Commons Library style. Even experienced users should take note of the conventions used to adhere to the style guidance when using R. `clcharts` is designed to make this easier and provides some helper functions that will save you time.
 
-For a detailed introduction to using `ggplot2` see Chapter 3 of *R for Data Science* on [Data visualisation](https://r4ds.had.co.nz/data-visualisation.html).
+For a detailed introduction to using `ggplot2` see Chapter 3 of *R for Data Science* on [Data visualisation](https://r4ds.had.co.nz/data-visualisation.html), and the `ggplot2` [cheatsheet](https://rstudio.github.io/cheatsheets/html/data-visualization.html).
 
 ---
 
@@ -23,7 +23,7 @@ __You must install the font pack before you install the package.__
 
 The House of Commons Library chart style uses licensed fonts that are not distributed with the `clcharts` package. Instead, a font pack is separately available for Library users. This is a small folder of the required font files, which should be copied into your home directory with the folder name `.clcharts`.
 
-Library users can find the font pack on the shared drive under `Teams/Statistics/Subjects/Code/R`. The location of your home directory will depend on your operating system. To find out the location of the directory where `clcharts` will expect to find the font pack folder, type the following into your R console:
+Library users can find the font pack on the shared drive under `H:\Statistics\Subjects\Code\R\`. The location of your home directory will depend on your operating system. To find out the location of the directory where `clcharts` will expect to find the font pack folder, type the following into your R console:
 
 ```r
 Sys.getenv("HOME")
@@ -1440,3 +1440,5 @@ Type a question mark followed by a function name into the R console to see the f
 ```r
 ?theme_commonslib
 ```
+
+This [cheatsheet]("cheatsheet/clcharts.pdf") gives an introduction to `clcharts`.

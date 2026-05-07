@@ -1441,4 +1441,4 @@ Type a question mark followed by a function name into the R console to see the f
 ?theme_commonslib
 ```
 
-This [cheatsheet]("cheatsheet/clcharts.pdf") gives an introduction to `clcharts`.
+This [cheatsheet](cheatsheet/clcharts.pdf) gives an introduction to `clcharts`.

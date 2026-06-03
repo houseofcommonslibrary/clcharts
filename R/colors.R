@@ -18,6 +18,7 @@ COLOR_PARTY_LABOUR <- "#d50000"
 COLOR_PARTY_LIB_DEM <- "#faa01a"
 COLOR_PARTY_UKIP <- "#722889"
 COLOR_PARTY_BREXIT <- "#12b6cf"
+COLOR_PARTY_REFORM <- "#1eb8d0"
 COLOR_PARTY_GREEN <- "#78b82a"
 COLOR_PARTY_SNP <- "#fff685"
 COLOR_PARTY_SNP_ALT <-  "#f7db15"
@@ -70,6 +71,7 @@ commonslib_party_colors <- c(
     "lib_dem" = COLOR_PARTY_LIB_DEM,
     "ukip" = COLOR_PARTY_UKIP,
     "brexit" = COLOR_PARTY_BREXIT,
+    "reform" = COLOR_PARTY_REFORM,
     "green" = COLOR_PARTY_GREEN,
     "snp" = COLOR_PARTY_SNP,
     "snp_alt" = COLOR_PARTY_SNP_ALT,

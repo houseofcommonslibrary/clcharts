@@ -23,7 +23,7 @@ __You must install the font pack before you install the package.__
 
 The House of Commons Library chart style uses licensed fonts that are not distributed with the `clcharts` package. Instead, a font pack is separately available for Library users. This is a small folder of the required font files, which should be copied into your home directory with the folder name `.clcharts`.
 
-Library users can find the font pack on the shared drive under `H:\Statistics\Subjects\Code\R\`. The location of your home directory will depend on your operating system. To find out the location of the directory where `clcharts` will expect to find the font pack folder, type the following into your R console:
+Library users can find the font pack on the shared drive under `H:\Statistics\Code projects\.clcharts`. The location of your home directory will depend on your operating system. To find out the location of the directory where `clcharts` will expect to find the font pack folder, type the following into your R console:
 
 ```r
 Sys.getenv("HOME")
